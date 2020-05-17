@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
+
+<head>
+
+<title>gugutz Tweaks Collection</title>
+
+<style type="text/css">
+body {
+background-color: black;
+color: white;
+font-family: "Segoe UI", "Tahoma", "Verdana", "Arial";
+padding: 20px;
+font-size: 11px;
+}
+a:link {
+color: orange;
+text-decoration: none;
+}
+a:visited {
+color: lightblue
+}
+a:hover {
+text-decoration: bold, underline;
+color: acqua;
+}
+.titulo {
+text-align:center;
+font-weight: bold;
+font-size: 16px;
+}
+.topo {
+text-align: right;
+font-weight: bold, underline;
+}
+.code {
+	font-family: "Lucida Console", "Courier New", Courier, monospace;
+	border: 1px solid #999999; 
+	background-color: #E1E1E1;
+	color: black;
+	margin: 3px;
+	width: 85%;
+	overflow: auto;
+	/*white-space:pre;*/
+}
+.callout-box {
+	float: right;
+	font-size: 11px;
+	border: solid black 1px;
+	text-align: left;
+	width: 200px;
+	margin: 15px 15px 15px 15px;
+	padding: 5px;
+	background: #EEE;
+}
+.callout-box a:visited {
+color: blue;
+text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+	<hr />
+<a id="topo"></a>
+<div class="titulo">gugutz Tweaks Collection v0.4</div>
+
+<div class="callout-box">
+<ul>
+<li><a href="#sobre">About this edition</a></li>
+<li><a href="#metodos">About the importing methods</a></li>
+<li><a href="#cmdlines">cmdlines usage sample</a></li>
+<li><a href="#roe">RunOnceEx usage sample</a></li>
+<li><a href="#servicos">Services tweaks</a></li>
+<li><a href="#mudancas">History of Changes</a></li>
+</ul>
+</div>
+
+<br /><br />
+
+Created using as base the <a href="http://www.msfn.org/board/index.php?showtopic=66127" target="_blank">Registry Tweaks PT 4 February 3rd</a>, from the MSFN Forums, created by John Cronk aka "Johnny Do" and modified by Glent. 
+
+<br /><br />
+
+The difference between this and the original collection is that in this the tweaks are organized in separate files for better organization, and i mantain it now, correting errors and eventually adding more tweaks.
+
+<br /><br />
+
+If you have any sugestions or things to add to the files, please feel free to contact me at <a href="mailto:gugutz@gmail.com?subject=Regtweaks Collection">gugutz@gmail.com</a> or send a Private Message at the <a href="http://www.msfn.org/board/" target="_blank">MSFN Forums</a>.
+
+<br /><br />
+
+Also visit <a href="http://gugutz.co.nr" target="_blank">My Site</a> for future releases and other stuff.
+
+<br /><br />
+
+Thank you for using my collection, and see you around. :)
+
+	<hr />
+
+<a id="sobre"></a>
+<div class="titulo">About this edition</div>
+<br /><br />
+In this edition i´ve added some new files inside a new folder called "essentials". The purpose of this is to make a folder in witch you can have only essential tweaks that are in no way harmfull to the system and are ready to be used in a Unattended Windows Setup, instead of opening file by file and removing tweaks you don´t like.
+<br /><br />
+
+Inside the "essentials" folder, you will find 4 files:
+<ul>
+<li><b>tweaks_en.reg</b> - This is the file that contains the main tweaks.</li>
+<li><b>services.reg</b> - This is the file to tweak the System Services.</li>
+<li><b>other-software.reg</b> - In this one there are a lot of tweaks for various Non-MS Software. The intention of this file is to get the registry ready to whenever you install a application, you won´t have to configured it to get it installed the way you want (like not installing Google Toolbar when installing Skype, set NOD32 to full protection withou asking when you first install it, etc...)</li>
+<li><b>registry_bookmarks.reg</b> - This one adds some bookmarks to the registry, like My Computer and My Network Places, so if you plan to make modifications after applying the tweaks, you can easily acess the main keys in the registry without having to look for them.</li>
+</ul>
+
+Then first you should decide witch package you want to use: The essentials or the one that contains all the tweaks.
+<br /><br />
+
+If you choose to use the folder with all the tweaks, please be aware that this one is inside the package only for informational purposes. You MUST NOT go over applying the tweaks before revising them. Then if you choose the package with all the tweaks, here is what you should do:
+<br /><br />
+
+Open each .reg file, read them completely, and coment (with a semi-colon -> " ; ", without the quotes). Leave "as is" only the tweaks that you want.
+<br /><br />
+
+By doing that, when the time to import the tweaks comes, the registry editor will jump the commented entries. This way, you would have made your very own personal collection, that suits better to you machine specifications and to your taste.
+<br /><br />
+
+<p class="topo"><a href="#topo">Top</a></p>
+	<hr />
+
+<a id="metodos"></a>
+<div class="titulo">About the Importing Methods</div>
+<br /><br />
+
+I´m not sure exactly why, but some tweaks do not "fix" using only cmdlines.txt. Maybe it is because Windows makes some final adjustments at first login, maybe not. That is why it is better also use RunOnceEx.cmd to make sure everything get imported right.
+<br /><br />
+
+Bellow you can read usage samples for cmdlines.txt and RunOnceEx. Just keep reading...
+<br /><br />
+
+<p class="topo"><a href="#topo">Top</a></p>
+	<hr />
+
+<a id="cmdlines"></a>
+<div class="titulo">cmdlines.txt usage sample</div>
+<br /><br />
+
+To make things easier, create a batch file called anything you like. In this exemple i´ll be using "tweaks.cmd". Create it inside the $OEM$ folder, open it with your favorite text editor and paste this:
+<br /><br />
+
+<div class="code">
+<pre>
+cmdow @ /HID
+@echo off
+
+FOR %%D IN (d: e: f: g: h: i: j: k: l: m: n: o: p: q: r: s: t: u: v: w: x:) DO IF EXIST %%D\WIN51IP SET CDROM=%%D
+SET TWEAKS=%CDROM%\Setup\Tweaks
+
+regedit.exe /s %tweaks%\tweaks_en.reg
+regedit.exe /s %tweaks%\services.reg
+regedit.exe /s %tweaks%\other-software.reg
+regedit.exe /s %tweaks%\favoritos-registro.reg
+</pre>
+</div>
+
+<br />
+
+Change the line <b>"SET TWEAKS=%CDROM%\Setup\Tweaks"</b> to whatever is the path to the tweaks in your XP CD.
+<br /><br />
+
+After that open your cmdlines.txt and add this line in any place available there:
+
+<div class="code">
+<pre>
+"tweaks.cmd"
+</pre>
+</div>
+
+<br />
+
+This will make "tweaks.cmd" to be called at T-12 of setup. Then the batch file will detect your CD (with the <b>FOR</b> statement) and import the tweaks to the registry.
+<br /><br /><br />
+
+<b><i>(IF you´d like to make your own personal package of tweaks using the folder with all the tweaks rathen than the "essentials", the code to be put in the "tweaks.cmd" file would be this:)</i></b>
+
+<div class="code">
+<pre>
+regedit.exe /s %tweaks%\context_menus.reg
+regedit.exe /s %tweaks%\folder_view_and_taskbar.reg
+regedit.exe /s %tweaks%\general_customation.reg
+regedit.exe /s %tweaks%\general_settings.reg
+regedit.exe /s %tweaks%\internet_explorer.reg
+regedit.exe /s %tweaks%\logon.reg
+regedit.exe /s %tweaks%\media_player-windows_media_player.reg
+regedit.exe /s %tweaks%\multimedia.reg
+regedit.exe /s %tweaks%\other_software.reg
+regedit.exe /s %tweaks%\visual_effects.reg
+regedit.exe /s %tweaks%\outlook_express.reg
+regedit.exe /s %tweaks%\security.reg
+regedit.exe /s %tweaks%\SP2_only.reg
+regedit.exe /s %tweaks%\start_menu_and_taskbar.reg
+regedit.exe /s %tweaks%\startup-shutdown.reg
+regedit.exe /s %tweaks%\system_performance.reg
+regedit.exe /s %tweaks%\unsorted_and_untested.reg
+</pre>
+</div>
+
+<p class="topo"><a href="#topo">Top</a></p>
+	<hr />
+
+<a id="roe"></a>
+<div class="titulo">RunOnceEx.cmd usage sample</div>
+<br /><br />
+
+After performing the procedures above with cmdlines.txt, open your RunOnceEx.cmd and add these lines:
+
+<div class="code">
+<pre>
+REG ADD %KEY%\001 /VE /D "Applying Registry Tweaks" /f
+REG ADD %KEY%\001 /V 1 /D "regedit.exe /s %tweaks%\tweaks_en.reg" /f
+REG ADD %KEY%\001 /V 2 /D "regedit.exe /s %tweaks%\services.reg" /f
+REG ADD %KEY%\001 /V 3 /D "regedit.exe /s %tweaks%\other_software.reg" /f
+REG ADD %KEY%\001 /V 4 /D "regedit.exe /s %tweaks%\registry_bookmarks.reg" /f
+</pre>
+</div>
+
+<br />
+
+beeing <b>%tweaks%</b> a variable that indicates the path to the folder in witch the tweaks are.
+<br />
+If needed, create one, using the same line at the cmdlines.txt example above.
+<br /><br />
+Just don´t forget to change the numbers after the %KEY% variable to the corresponding number in you ROE sequence.
+<br /><br />
+
+<b><i>(IF you´d like to make your own personal package of tweaks using the folder with all the tweaks rathen than the "essentials", the code to be put in the "RunOndeEx.cmd" file would be this:)</i></b>
+
+<div class="code">
+<pre>
+REG ADD %KEY%\001 /VE /D "Applying Registry Tweaks" /f
+REG ADD %KEY%\001 /V 1 /D "regedit.exe /s %tweaks%\context_menus.reg" /f
+REG ADD %KEY%\001 /V 2 /D "regedit.exe /s %tweaks%\folder_view_and_taskbar.reg" /f
+REG ADD %KEY%\001 /V 3 /D "regedit.exe /s %tweaks%\general_customation.reg" /f
+REG ADD %KEY%\001 /V 4 /D "regedit.exe /s %tweaks%\general_settings.reg" /f
+REG ADD %KEY%\001 /V 5 /D "regedit.exe /s %tweaks%\internet_explorer.reg" /f
+REG ADD %KEY%\001 /V 6 /D "regedit.exe /s %tweaks%\logon.reg" /f
+REG ADD %KEY%\001 /V 7 /D "regedit.exe /s %tweaks%\media_player-windows_media_player.reg" /f
+REG ADD %KEY%\001 /V 8 /D "regedit.exe /s %tweaks%\multimedia.reg" /f
+REG ADD %KEY%\001 /V 9 /D "regedit.exe /s %tweaks%\other_software.reg" /f
+REG ADD %KEY%\001 /V 10 /D "regedit.exe /s %tweaks%\visual_effects.reg" /f
+REG ADD %KEY%\001 /V 11 /D "regedit.exe /s %tweaks%\outlook_express.reg" /f
+REG ADD %KEY%\001 /V 12 /D "regedit.exe /s %tweaks%\security.reg" /f
+REG ADD %KEY%\001 /V 13 /D "regedit.exe /s %tweaks%\SP2_only.reg" /f
+REG ADD %KEY%\001 /V 14 /D "regedit.exe /s %tweaks%\start_menu_and_taskbar.reg" /f
+REG ADD %KEY%\001 /V 15 /D "regedit.exe /s %tweaks%\startup-shutdown.reg" /f
+REG ADD %KEY%\001 /V 16 /D "regedit.exe /s %tweaks%\system_performance.reg" /f
+REG ADD %KEY%\001 /V 17 /D "regedit.exe /s %tweaks%\unsorted_and_untested.reg" /f
+</pre>
+</div>
+
+<p class="topo"><a href="#topo">Top</a></p>
+	<hr />
+
+<a id="servicos"></a>
+<div class="titulo">System Services</div>
+<br /><br />
+
+These Services Tweaks were obtained based on the <a href="http://majorgeeks.com/page.php?id=12" target="_blank">Black Viper´s Article about "Removing Uneeded Services"</a>, at Majors Geeks site.
+<br /><br />
+
+Inside the files there is only the names of the services. For a brief info about what each services does, visit <a href="http://gugutz.co.nr/regtweaks/en/services_explained.php">my site</a>
+<br /><br />
+
+If you´re going to make your own personal services tweak file, YOU REALLY SHOULD VISIT <a href="http://majorgeeks.com/page.php?id=12" target="_blank">The Article from witch these tweaks were obtained</a> to read more information about these tweaks and choose the ones that suits best to your machine.
+<br /><br />
+
+I´m releasing a personal tweak file, Services.gugutz.reg in "all" folder, witch should contain the Services Tweaking according to my machine and proper adjustments for most machine around there.
+<br /><br />
+
+You may notice in <a href="http://majorgeeks.com/page.php?id=12" target="_blank">Black Viper´s Article</a> that there are 27 Services that are setled "Disabled" for all Configurations (except Default Pro, but since you are tweaking your services, i presume the reason for this is that you don´t like MS deciding witch Service should be running on your machine...).
+<br /><br />
+
+So those are disabled in the "services.reg" file within the "essentials" folder.
+<br /><br />
+
+These services are:
+
+<ul>
+<li>Alerter</li>
+<li>Background Intelligent Transfer Service</li>
+<li>ClipBook</li>
+<li>Error Reporting Service</li>
+<li>Help and Support</li>
+<li>Indexing Service</li>
+<li>IPSEC Services</li>
+<li>Messenger</li>
+<li>Net Login</li>
+<li>Network DDE</li>
+<li>Network DDE DSDM</li>
+<li>Performance Logs and Alerts</li>
+<li>QoS RSVP</li>
+<li>Remote Desktop Help Session Manager</li>
+<li>Remote Registry Service</li>
+<li>Routing and Remote Access</li>
+<li>Secondary Logon</li>
+<li>Security Accounts Manager</li>
+<li>Smart Card</li>
+<li>Smart Card Helper</li>
+<li>System Restore Service</li>
+<li>TCP/IP NetBIOS Helper Service</li>
+<li>Telnet</li>
+<li>Uninterruptible Power Supply</li>
+<li>Upload Manager</li>
+<li>WebClient</li>
+<li>Windows Time</li>
+</ul>
+
+You may also notice that there are 10 Services that have the relevancy "Vital" or "Yes, you need it". These services should be setled AT LEAST to Manual, and, in most cases, to Automatic. You can disable these Services, but do it only if you really know what you´re doing. Even so, DO NOT disable <b>Remote Procedure Call (RPC)</b> and <b>Workstation</b>, since most services depends on them, and you stop them, all the others will also stop , and then your system will probably (almost for certain) die.
+<br /><br />
+
+These Services are:
+
+<ul>
+<li>Application Management</li>
+<li>Event Log</li>
+<li>Network Connections</li>
+<li>Plug and Play</li>
+<li><b>Remote Procedure Call (RPC)</b></li>
+<li>Windows Audio</li>
+<li>Windows Installer</li>
+<li>Windows Management Instrumentation</li>
+<li>Windows Management Instrumentation Driver Extension</li>
+<li><b>Workstation</b></li>
+</ul>
+
+<br /><br />
+
+Thats it. Any bugs will hopefully be corrected on the next version.
+
+<p class="topo"><a href="#topo">Top</a></p>
+	<hr />
+
+<a id="mudancas"></a>
+<div class="titulo">History of Changes</div>
+<br /><br />
+
+January 09, 2007. v0.4
+<ul>
+<li><font color="red">Added</font> - Tweaks to change other visual stuff rathen than windows defaults (like use Royale Noir, use Segoe UI as system font, etc...)</li>
+<li><font color="red">Added</font> - Some new tweaks inside "other_software.reg" file</li>
+<li><font color="red">Added</font> - The package now has a new folder with only essential tweaks to a unattended installation.</li>
+<li><font color="red">Removed</font> - "Change Transition Effect to Menus and Tips using Fade", ´cause it was restarting my PC and the ones i installed (and took me about 4 days to find out this ******).</li>
+<li><font color="red">Removed</font> - The batch files inside the package. There are instrucions inside the readme file instead.</li>
+</ul>
+<br /><br />
+
+November 02, 2006. v0.3
+<ul>
+<li><font color="red">Added</font> - Folders to separate the tweaks according the it´s category (general, internet-networking, services)</li>
+<li><font color="red">Added</font> - New tweaks to 56k dial-up connections in the "internet-network" folder, based on the <a href="http://www.tweakxp.com/article37123.aspx" target="_blank">TweakXP Article for Dial-Up Tweaks</a>. Read the info inside the REG file..</li>
+<li><font color="red">Changed</font> - "HungAppTimeout" and "WaitToKillAppTimeout" changed to 1500 = 1,5 seconds  to increase stability while closing apps (thanks DL.)</li>
+<li><font color="red">Changed</font> - A new and colorfull "readme" file using XHTML.</li>
+<li><font color="red">Removed</font> - Duplicate entries "MaxConnectionsPerServer" and "NoDriveTypeAutoRun" (thanks DL again :P)</li>
+</ul>
+<br /><br />
+
+October 30, 2006. v0.2
+<ul>
+<li><font color="red">Added</font> - Tweaks for TuneUp Utilities 2006 in "Other_software.reg"</li>
+<li><font color="red">Added</font> - 2 Tweaks for Macromedia Shockwave 10 in "Other_software.reg" (to not update and collect statistics)</li>
+<li><font color="red">Fixed</font> - Some idention and ortographical misleads that were left in the previous version.</li>
+<li><font color="red">Removed</font> - Duplicate entrie "Internet Connection - Firewall (ICF) / Sharing (ICS)" in all the Services tweaks files, since it is the same as "Windows Firewall/Internet Connection Sharing (ICS)". I added some comments to explain it better to ppl who don´t use SP2.</li>
+<li><font color="red">Important Change</font> - Removed the Services.reg file and created a new folder, "Services", in witch there are 6 reg files for tweaking the XP Services, based on the Black Viper´s article on "Removing Uneeded Services" at Major Geeks site. <b>PLEASE RED THE README FILE BEFORE APPLYING THESE TWEAKS</b>. I made a section on the readme file with important info about these new tweaks.</li>
+</ul>
+<br /><br />
+
+October 27, 2006. v0.1
+
+<ul>
+<li><font color="red">Added</font> - tweaks for Adobe Reader 7 series</li>
+<li><font color="red">Fixed</font> - Idented the original files to the get more space and be better organized.</li>
+<li><font color="red">Fixed</font> - Some ortographical errors, wrong entries and coments from the original file</li>
+<li><font color="red">Changed</font> - Splitted the Single Tweaks File into 17 independant .reg files.</li>
+<li><font color="red">Changed</font> - Removed the coment tags of each reg file on the first line, witch identify the file as being a registry file to be used with "Windows Registry Editor Version 5.00". Be carefull before double clicking in any file.</li>
+</ul>
+<br /><br />
+
+<p class="topo"><a href="#topo">Top</a></p>
+
+</body>
+</html>

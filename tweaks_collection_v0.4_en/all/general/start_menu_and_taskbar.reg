@@ -1,0 +1,162 @@
+Windows Registry Editor Version 5.00
+
+;=====================================================================================================
+; ****************************************  Start menu & Taskbar **************************************** 
+;=====================================================================================================
+
+;--------------------------------------------------------------------------------------------------------------------------------
+;Remove Pinned Programs List from the Start Menu
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer]
+"NoStartMenuPinnedList"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Start menu Items: Hide/Show/Cascade.
+; dword: 00000000= Don't display 
+; dword: 00000001= Display as a link (Default)
+; dword: 00000002= Display as a menu (Cascade)
+
+; Show Favorites
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"StartMenuFavorites"=dword:00000001 
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Help and Supportlink
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowHelp"=dword:00000001 
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Computer 
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyComputer"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Documents
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyDocs"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Music
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyMusic"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Pictures
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyPics"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Network Connections
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowNetConn"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Printers and Faxes
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowPrinters"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Run Command
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowRun"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Search Command
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowSearch"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; No Recent Docsmenu removes the recent documents from the start menu.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRecentDocsMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change MenuShowDelay (Start Menu load speed)
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="10"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove "set programs access default" from startmenu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSMConfigurePrograms"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable scrolling in start menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_ScrollPrograms"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Highlighting New Programs on Start Menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_NotifyNewApps"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Sort Start Menu and Favorites in Alphabetical Order
+
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\Start Menu]
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\Favorites]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Frequent Programs List from the Start Menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoStartMenuMFUprogramsList"=dword:00000001
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoStartMenuMFUprogramsList"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Username from the Start Menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoUserNameInStartMenu"=dword:00000001
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoUserNameInStartMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove the Logoff Button
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"StartMenuLogoff"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"StartMenuLogoff"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show logoff button on classic start menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"StartMenuLogoff"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"StartMenuLogoff"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Classic start menu
+
+;[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+;"ClassicViewState"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Administrative Tools in your Start Menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_AdminToolsRoot"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set icon size for start menu , 1 = Large / 0 = Small Icons
+; Note: Value set to 0 (Small Icons)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_LargeMFUIcons"=dword:00000000

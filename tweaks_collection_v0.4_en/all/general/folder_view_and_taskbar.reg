@@ -1,0 +1,235 @@
+Windows Registry Editor Version 5.00
+
+;======================================================================================================
+; **************************************** Folder view and Taskbar ****************************************
+;======================================================================================================
+
+; Single click mode
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"ShellState"=hex:24,00,00,00,11,28,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+01,00,00,00,0d,00,00,00,00,00,00,00,02,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Shared Documents from My Computer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSharedDocuments"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Dont show window contents while dragging
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"DragFullWindows"="0"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable ClearType
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Active Desktop
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoActiveDesktop"=dword:00000001
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Disable all Balloon Tips
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EnableBalloonTips"=dword:00000000
+"FolderContentsInfoTip"=dword:00000000
+"ShowInfoTip"=dword:00000000
+"StartButtonBalloonTip"=dword:00000000
+"NoSMBalloonTip"=dword:00000000
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Wrap Icon Titles
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"IconTitleWrap"="1"
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Use Small Icons
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\SmallIcons]
+"SmallIcons"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Hide (remove) ALL System Tray icons
+
+[HKEY_Current_User\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoTrayItemsDisplay"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Language Bar
+
+[-HKEY_CLASSES_ROOT\CLSID\{540D8A8B-1C3F-4E32-8132-530F6A502090}]
+@=-
+"MenuTextPUI"=-
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add custom quicklaunch , (Please visit http://www.msfn.org/board/index.php?showtopic=51753)
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't Group Similar Taskbar Buttons
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarGlomming"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarGlomming"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Automatic Hiding of Inactive Tray Icons
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"EnableAutoTray"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Stop Applcations from stealing the focus with pop ups
+
+[HKEY_CURRENT_USER\Control Panel\desktop]
+"ForegroundLockTimeout"=dword:00030d40
+"ForegroundFlashCount"=dword:00000003
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Lock taskbar
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"TaskbarSizeMove"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Control Panel Classic View 
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"ForceClassicControlPanel"=dword:00000001
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Status bar, list view for Explorer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams]
+"Settings"=hex:09,00,00,00,03,00,00,00,00,00,00,00,e0,a5,1f,0e,73,35,cf,11,ae,\
+  69,08,00,2b,2e,12,62,04,00,00,00,04,00,00,00,43,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Icon view for Explorer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams]
+"Settings"=hex:09,00,00,00,01,00,00,00,01,00,00,00,e0,d0,57,00,73,35,cf,11,ae,\
+69,08,00,2b,2e,12,62,04,00,00,00,04,00,00,00,43,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display detail on windows explorer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams]
+"Settings"=hex:08,00,00,00,04,00,00,00,01,00,00,00,00,77,7e,13,73,35,cf,11,ae,\
+69,08,00,2b,2e,12,62,04,00,00,00,10,00,00,00,43,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display drives in longhorn mode
+
+; 0 = windows default
+; 1 = only network drive's letters shown.
+; 2 = no drive letters shown
+; 4 = all drive letters shown
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowDriveLettersFirst"=dword:00000004
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show file extensions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show protected operating system files
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\SuperHidden]
+"DefaultValue"=dword:00000000
+ [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSuperHidden"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Hidden Files and Folders 
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Hidden"=dword:00000000    
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display contents of system folders and C:\ (protected folder)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"WebViewBarricade"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Windows classic folders
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\WebView]
+"DefaultValue"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Cache more Icons
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"Max Cached Icons"="4096"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Put my computer, my network places, my documents , IE on the desktop
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+"{450D8FBA-AD25-11D0-98A8-0800361B1103}"=dword:00000000
+"{208D2C60-3AEA-1069-A2D7-08002B30309D}"=dword:00000000
+"{871C5380-42A0-1069-A2EA-08002B30309D}"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Run explorer from clicking at My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell]
+@="Explorer"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Explorer\Command]
+@="explorer.exe /e,/n,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Windows 2000 File Sorting Method
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoStrCmpLogical"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Cached "Folder-View Settings"
+; Currently at 250 (to acelerate browsing in local folders)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell]
+"BagMRU Size"=dword:000000FA
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam]
+"BagMRU Size"=dword:000000FA
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Thumbnail for bitmap files
+
+[HKEY_CLASSES_ROOT\Paint.Picture\DefaultIcon]
+"%1"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display High Color Icons
+; 4 - 16 colors
+; 8 - 256 colors
+; 16 - 65536 colors
+; 24 - 16.7 million colors 
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"Shell Icon BPP"="24"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Improve Thumbnail Quality
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\
+"ThumbnailQuality"=dword:00000064

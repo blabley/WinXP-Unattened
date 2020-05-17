@@ -1,0 +1,120 @@
+Windows Registry Editor Version 5.00
+
+;===================================================================================================
+; **************************************** Sytem Performance  ****************************************
+;===================================================================================================
+
+; Improve file system performance (Speed up NTFS) Note: these have been reported to cause non-compatibility with DOS/Win9x-based apps/games
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+"Win95TruncatedExtensions"=dword:00000001
+"Win31FileSystem"=dword:00000000
+;------------------------------------------------------------------------------
+
+; Speed up opening of My Computer and Explorer
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stisvc]
+"Start"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"NoNetCrawling"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRemoteRecursiveEvents"=dword:00000001
+;------------------------------------------------------------------------------
+
+; Force DLL To Unload From Memory
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AlwaysUnloadDLL]
+@="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables DOS Filenames may cause problems with old DOS based applications
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisable8dot3NameCreation"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; To be used manually when windows will not set hard drives or optical drives to DMA mode (this tweak does not mean that your drives will be in DMA mode, you will still have to do that yourself)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96A-E325-11CE-BFC1-08002BE10318}\0001]
+"MasterDeviceTimingModeAllowed"=dword:ffffffff
+"SlaveDeviceTimingModeAllowed"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96A-E325-11CE-BFC1-08002BE10318}\0002]
+"MasterDeviceTimingModeAllowed"=dword:ffffffff
+"SlaveDeviceTimingModeAllowed"=dword:ffffffff
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Increase IoPageLockLimit (disk cache)
+; Note- Use the following settings depending on your system RAM:
+; Note2 : Currently set to PCs with 512 mb RAM. Beware to modify according to your System Memory
+; 00020000  =  131072 KB (if RAM > 512 MB)
+; 00010000	 =   65536 KB (if RAM > 256 MB)
+; 00008000  =   32768 KB (if RAM > 128 MB)
+; 00004000  =    16384 KB (if RAM > 64 MB)
+; 00002000  =      8192 KB (if RAM > 32 MB)
+; 00001000	 =      4096 KB (if RAM < 32 MB)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"IoPageLockLimit"=dword:00020000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Speeds up copying/moving of zip files (disable windows built in zip functionality)
+
+[-HKEY_CLASSES_ROOT\.zip\CompressedFolder]
+
+[-HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CompressedFolder]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Windows Installer Rollback (faster msi installs, But some MSI installers, like .NET Framework, wont work with this tweak activated, caused all sorts of problems. Not Recommended)
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer]
+"DisableRollback"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Optimize System Cache Size: server only (Will cause data corruption if you have ATI vid card and 1 GB of ram)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"LargeSystemCache"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable kernel paging; Optimize Core System Performance
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisablePagingExecutive"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Multiple Explorer Processes meaning its more stable
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"DesktopProcess"=dword:00000001
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Disable the NTFS Last Access Time Stamp (speeds up viewing folders in ntfs)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Run in Separate Memory Space Option to run 16 bit programs in VDM
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"MemCheckBoxInRunDlg"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"MemCheckBoxInRunDlg"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Opens 16-bit apps in a separate memory space, this increases stability when dealing with 16-bit apps.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WOW]
+"DefaultSeparateVDM"="Yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Optimize Hard Disk when idle
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001

@@ -1,0 +1,757 @@
+;Windows Registry Editor Version 5.00
+
+;=================================================================================================
+; **************************************** Internet Explorer ****************************************
+;=================================================================================================
+
+;Max your Internet Explorer's simultaneous downloads to 10 (default was 2)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPer1_0Server"=dword:0000000a
+"MaxConnectionsPerServer"=dword:0000000a
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Max your Internet Explorer's simultaneous downloads to 50 (default was 2)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPerServer"=dword:00000032
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;No header and footer in Internet explorer printout
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\PageSetup]
+"header"=""
+"footer"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable IE Links Bar
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Toolbars\Restrictions]
+"NoLinksBar"=dword:00000001
+
+; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;    *You Can Use This Batch Instead*				     
+;											       
+;	@ECHO OFF									      
+;	IF EXIST %SYSTEMDRIVE%\SYSTEM32\CMDOW.EXE CMDOW @ /HID			       
+;	IF EXIST "%USERPROFILE%\FAVORITES\LINKS" RD /S /Q "%USERPROFILE%\FAVORITES\LINKS"       
+;											   
+; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Alter name of Internet Explorer>Tools>>Windows Update to "Your text here"
+
+[HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Internet Explorer]
+"Windows Update Menu Text"="Your text here"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Make IE address bar search like Mozilla
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl]
+@="http://www.google.com/keyword/%s"
+"provider"="gogl"
+" "="+"
+"&"="%26"
+"+"="%2B"
+"#"="%23"
+"?"="%3F"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable Internet Explorer "Send information to the Internet" prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1601"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable Internet Explorer Auto-Complete prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\IntelliForms]
+"AskUser"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable Internet Explorer Cookie "Privacy Icon" prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"PrivDiscUiShown"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Add Google As Main Start Page 
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Start Page"="http://www.google.com/"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Add Google As Main/default Search Page
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Use Search Asst"="no"
+"Search Page"="http://www.google.com"
+"Search Bar"="http://www.google.com/ie_rsearch.html"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchURL]
+@="http://www.google.com/keyword/%s"
+"provider"="gogl"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://www.google.com/ie_rsearch.html"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Adds search keywords to Internet Explorer address bar (in this order: Microsoft Knowledge Base, Altavista, Google, MSN, FileMirrors)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\MSKB]
+@="http://support.microsoft.com/?kbid=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\AV]
+@="http://www.altavista.com/sites/search/web?q=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\g]
+@="http://www.google.com/search?q=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\MSN]
+@="http://search.msn.com/results.asp?q=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\FM]
+@="http://www.filemirrors.com/search.src?file=%s"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Add Government and Military to auto url searches
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\UrlTemplate]
+"5"="www.%s.gov"
+"6"="www.%s.mil"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Remove All Browser Helper Objects
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Remove All Browser Extensions
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Extensions]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Extensions]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Remove All Toolbars
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Toolbar]
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Toolbar]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Remove Norton Antivirus from IE Toolbar List
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Toolbar]
+"{42CDD1BF-3FFB-4238-8AD1-7859DF00B1D6}"=-
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Temporary Internet Files cache settings Prune History to only 2 days
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Url History]
+"DaysToKeep"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set the ID for which cookies get allotted
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EmailName"="any@none.com"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Never check for newer versions of stored pages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"SyncMode5"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set cache to 2 MB for this user
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\Content]
+"CacheLimit"=dword:00000800
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\Content]
+"CacheLimit"=dword:00000800
+;-----------------------------------------------------
+
+; And also as a system-wide default
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\Content]
+"CacheLimit"=dword:00000800
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\Content]
+"CacheLimit"=dword:00000800
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache]
+"Persistent"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Reduces size of index.dat in cookies
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\Cookies]
+"CacheLimit"=dword:00000100
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\History]
+"CacheLimit"=dword:00000800
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\Content]
+"CacheLimit"=dword:00000800
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\Cookies]
+"CacheLimit"=dword:00000100
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache\History]
+"CacheLimit"=dword:00000800
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\Content]
+"PerUserItem"=dword:00000001
+"CachePrefix"=""
+"CacheLimit"=dword:00000800
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\Cookies]
+"PerUserItem"=dword:00000001
+"CachePrefix"="Cookie:"
+"CacheLimit"=dword:00000100
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\History]
+"PerUserItem"=dword:00000001
+"CachePrefix"="Visited:"
+"CacheLimit"=dword:00000800
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable persistent internet caching, among other things
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\Cache]
+"Persistent"=hex:00,00,00,00
+"FreshnessInterval"=hex:80,f4,03,00
+"CleanupFactor"=hex:19,00,00,00
+"CleanupTime"=hex:00,00,00,00
+"CleanupInterval"=hex:80,51,01,00
+"DebugFlag"=hex:ff,ff,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Alternatively empty temporary internet files folder when browser is closed
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Cache]
+"Persistent"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\Cache]
+"Persistent"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Set auto complete to full on
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete]
+"AutoSuggest"="yes"
+"Append Completion"="yes"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Use FormSuggest"="yes"
+"FormSuggest Passwords"="yes"
+"FormSuggest PW Ask"="yes"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\New Windows]
+"PopupMgr"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Skips the Internet Connection Wizard (which comes the first time you start IE6)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Connection Wizard]
+"Completed"=hex:01,00,00,00
+"DesktopChanged"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Internet Explorer Status Bar
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"StatusBarWeb"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Show Statusbar in all windows
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"StatusBarOther"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Always expand ALT text for images
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Expand Alt Text"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Automatically check for internet updates - Disabled
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoUpdateCheck"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable script debugging in applications using IE
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"DisableScriptDebuggerIE"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable script debugging in IE
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Disable Script Debugger"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display a notification about every script error
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Error Dlg Displayed On Every Error"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable install on demand (Internet Explorer)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoJITSetup"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable install on demand (other)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoWebJITSetup"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable page transitions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Page_Transitions"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable personalized favourites menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"FavIntelliMenus"="NO"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable third party browser extensions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable Browser Extensions"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable visual styles on buttons and controls in web pages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"UseThemes"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Force offscreen compositing even under terminal server
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Force Offscreen Composition"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Notify when add-ons disabled
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NotifyControlDisable"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Notify when downloads complete
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NotifyDownloadComplete"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Reuse windows for launching shortcuts
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"AllowWindowReuse"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show friendly HTTP error messages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Friendly http errors"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show GO button in address bar
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"ShowGoButton"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Underline links
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Anchor Underline"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use Smooth Scrolling
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"SmoothScroll"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display java applets blocked dialog
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"DisplayJavaHardeningDlg"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable automatic image resizing
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable AutoImageResize"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable image toolbar
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable_MyPics_Hoverbar"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't play animations in web pages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Play_Animations"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't play sounds in web pages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Play_Background_Sounds"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't play video in web pages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Display Inline Videos"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show image download placeholders
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Show image placeholders"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show pictures
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Display Inline Images"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Print background colors and images :Edit Yes or No
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Print_Background"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; "Advanced" tab's settings (set for fast-browsing)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Show_ChannelBand"="No"
+"Cache_Update_Frequency"="Once_Per_Session"
+"Show_StatusBar"="yes"
+"Show_ToolBar"="yes"
+"Show_URLinStatusBar"="yes"
+"Show_URLToolBar"="yes"
+"Start Page"="about:blank"
+"Use_DlgBox_Colors"="yes"
+"FullScreen"="no"
+"Show_FullURL"="no"
+"ShowedCheckBrowser"="Yes"
+"Check_Associations"="No"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use http 1.1
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableHttp1_1"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use http 1.1 through proxy settings
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"ProxyHttp1.1"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Check for server certificate revocation
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"CertificateRevocation"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Do not save encrypted pages to disk
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"DisableCachingOfSSLPages"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable integrated windows authentication
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableNegotiate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use SSL 2.0 (Checked) + SSL 3.0 (Checked) + TSL 1.0 (unchecked)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"SecureProtocols"=dword:00000028
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Warn about invalid site certificates
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"WarnonBadCertRecving"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Warn if changing between secure and insecure mode
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"WarnonZoneCrossing"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Always send URL as UTF-8
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"URLEncoding"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable FTP folder view (for faster browsing)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Ftp]
+"Use Web Based FTP"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use passive FTP (for firewall and DSL modem compatibility, and for compatibility with older FTP servers)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Ftp]
+"Use PASV"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show friendly/Full URL
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"Show_FullURL"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Smart image dithering
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"SmartDithering"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Enable offline items to be synchronized on a schedule
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Webcheck]
+"NoScheduledUpdates"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Check for publisher's certificate revocation
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\WinTrust\Trust Providers\Software Publishing]
+"State"=dword:00023c00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Enable profile assistant
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Security\P3Global]
+"Enabled"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Splash screen on IE load
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoSplash"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Prevent IE from popping-up "This page requires these components to display correctly" for MS and 3rd party apps
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoJITSetup"=dword:00000001
+"NoWebJITSetup"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disbale Favorites
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFavorites"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFavorites"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off the Internet Options command on the Tools menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoBrowserOptions"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoBrowserOptions"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off Save on the File Download dialog box
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFileNew"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFileNew"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the Save As command on the File menu.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoBrowserSaveAs"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoBrowserSaveAs"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the Tip of the Day command on the Help menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemTipOfTheDay"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemTipOfTheDay"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the For Netscape Users command on the Help menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemNetscapeHelp"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemNetscapeHelp"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the Internet Explorer Tutorial command on the Help menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemTutorial"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemTutorial"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the Send Feedback command on the Help menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemSendFeedback"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpItemSendFeedback"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Print command on the File menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoPrinting"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoPrinting"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off the New command on the File menu
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFileNew"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFileNew"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the Media Bar command on the toolbar when the user plays online content
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"No_LaunchMediaBar"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"No_LaunchMediaBar"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables F11 key (full-screen mode).
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoTheaterMode"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoTheaterMode"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables the right-click shortcut menu on a Web page.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoBrowserContextMenu"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoBrowserContextMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns the F3 command and the Search bar
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFindFiles"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoFindFiles"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off the Source command on the View menu. However, to completely disable user's ability to view the source, the NoBrowserContextMenu value must be added.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoViewSource"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoViewSource"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off the CTRL+N command and the Open command to open a new window.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoOpeninNewWnd"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoOpeninNewWnd"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Makes the Always ask before opening this type of file check box on the on the Safe Open File dialog box unavailable so that it is always selected.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"AlwaysPromptWhenDownload"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"AlwaysPromptWhenDownload"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables the Back and Forward navigation buttons on the toolbar.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoNavButtons"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoNavButtons"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables the Internet Explorer Help menu.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpMenu"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"NoHelpMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disallows the playing of online content.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"No_MediaBarOnlineContent"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"No_MediaBarOnlineContent"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't show online content in Media bar
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Media]
+"SuppressOnlineContent"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Dis-allow spying by web-sites
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ProtocolDefaults]
+"about"=dword:00000004
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; IE toolbar layout (small icons, no text)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar]
+"ShowDiscussionButton"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Lock the toolbars
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar]
+"Locked"=dword:00000001

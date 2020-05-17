@@ -1,0 +1,367 @@
+Windows Registry Editor Version 5.00
+
+;===============================================================================================
+; ****************************************  Context Menus **************************************** 
+;===============================================================================================
+
+; Adds Control Panel to right click of MY Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Control Panel\command]
+@="rundll32.exe shell32.dll,Control_RunDLL"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Add/Remove to right click of MY Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Add/Remove Programs\command]
+@="control appwiz.cpl"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Services to right click of MY Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\services]
+@=hex(2):53,00,65,00,72,00,76,00,69,00,63,00,65,00,73,00,00,00
+"SuppressionPolicy"=dword:4000003c
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\services\command]
+@=hex(2):25,00,77,00,69,00,6e,00,64,00,69,00,72,00,25,00,5c,00,73,00,79,00,73, 00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,63,00,2e,00,65,00,78,00, ;65,00,20,00,2f,00,73,00,20,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52, 00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00, ;32,00,5c,00,73,00,65,00,72,00,76,00,69,00,63,00,65,00,73,00,2e,00,6d,00,73, 00,63,00,20,00,2f,00,73,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Device Manager to right click of MY Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\DevMgr]
+@="Device Manager"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\DevMgr\command]
+@="mmc.exe %%SYSTEMDRIVE%%\\WINDOWS\\SYSTEM32\\devmgmt.msc"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Registry Editor right click of MY Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\regedit]
+@="Registry Editor"
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\regedit\command]
+@="Regedit.exe"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Logoff to right click of MY Computer ,I add the [] to group these
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Logoff]\command]
+@="shutdown -l -f -t 5"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Reboot to right click of MY Computer , I add the [] to group these
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Reboot]\command]
+@="shutdown -r -f -t 5"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Shutdown to right click of MY Computer,I add the [] to group these
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Shutdown]\command]
+@="shutdown -s -f -t 5"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds MSCONFIG right click of MY Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\msconfig]
+@="Microsoft Configurator"
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\msconfig\command]
+@="msconfig.exe"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Turn Monitor Off to right click of MY Computer 
+; download the file from http://www.koding.co.uk/index.php?page=monoff and place it into %systemroot%\system32\ to work
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Turn Monitor Off]\command]
+@="hide.exe MonOff.exe"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Taskbar Context Menus
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoTrayContextMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Hide the Run as... option from the context menu
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"HideRunAsVerb"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove the Map and Disconnect Network Drive Options
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoNetConnectDisconnect"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Hide the Taskbar Settings on the Start Menu
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSetTaskbar"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Hide Computer Management Option
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoManageMyComputerVerb"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable the Recycle Bin Properties Option
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoPropertiesRecycleBin"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Encryption Commands on the Shortcut Menu
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EncryptionContextMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Makes a right click option for unknown files (Open with notepad)
+
+[HKEY_CLASSES_ROOT\*\shell]
+@="\"notepad.exe %1\""
+[HKEY_CLASSES_ROOT\*\shell\open]
+@="Open &With Notepad"
+[HKEY_CLASSES_ROOT\*\shell\open\command]
+@="notepad.exe %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes NVIDIA desktop context menu for digital displays
+
+[-HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\NvCplDesktopContext]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add register / unregister to the context menu for .dll files
+
+[HKEY_CLASSES_ROOT\.dll]
+"Content Type"="application/x-msdownload"
+@="dllfile"
+[HKEY_CLASSES_ROOT\dllfile]
+@="Application Extension"
+[HKEY_CLASSES_ROOT\dllfile\Shell\Register\command]
+@="regsvr32.exe \"%1\""
+[HKEY_CLASSES_ROOT\dllfile\Shell\UnRegister\command]
+@="regsvr32.exe /u \"%1\""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Add register / unregister to the context menu for .ocx files
+
+[HKEY_CLASSES_ROOT\.ocx]
+@="ocxfile"
+[HKEY_CLASSES_ROOT\ocxfile]
+@="OCX"
+[HKEY_CLASSES_ROOT\ocxfile\Shell\Register\command]
+@="regsvr32.exe \"%1\""
+[HKEY_CLASSES_ROOT\ocxfile\Shell\UnRegister\command]
+@="regsvr32.exe /u \"%1\""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Right-click any drive to close the tray of the optical drive ,(download CDR.exe from MSFN unattended guide, and put in your System32 folder)
+
+[HKEY_CLASSES_ROOT\Drive\shell\draw]
+@="Close CD-&tray"
+[HKEY_CLASSES_ROOT\Drive\shell\draw\command]
+@="cdr.exe close ALL"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Get a new Right-click menu option (command box)
+
+[HKEY_CLASSES_ROOT\Directory\shell\Command Prompt Here]
+@="Command P&rompt Here"
+[HKEY_CLASSES_ROOT\Directory\shell\Command Prompt Here\command]
+@="cmd.exe /k cd %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; All items have an "edit.." on right-click sending to notepad
+
+[HKEY_CLASSES_ROOT\*\shell\open]
+@="Edit.."
+[HKEY_CLASSES_ROOT\*\shell\open\command]
+@="notepad.exe %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; This adds an option in the right-click (context) menu to open any folder on your computer in a new window.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\openNew]
+@="Open In New &Window"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\openNew\Command]
+@="explorer %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Edit .nfo files with notepad
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithList]
+"a"="NOTEPAD.EXE"
+"MRUList"="a"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithProgids]
+"nfo_auto_file"=hex(0):
+;--------------------------------------------------------------------------------------------------------------------------------
+ 
+; Remove Print From Internet Shortcut
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\InternetShortcut\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From Images
+
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell\print]
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\text\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From TXT Files
+
+[-HKEY_CLASSES_ROOT\txtfile\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From REG Files
+
+[-HKEY_CLASSES_ROOT\regfile\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From CMD Files
+
+[-HKEY_CLASSES_ROOT\cmdfile\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From Batch Files
+
+[-HKEY_CLASSES_ROOT\batfile\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From INI Files
+
+[-HKEY_CLASSES_ROOT\inifile\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From INF Files
+
+[-HKEY_CLASSES_ROOT\inffile\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From PHP Files (Change AppName, To Name Of Default App For File Type)
+
+[-HKEY_CLASSES_ROOT\AppName.php\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From PDF Files (Change AppName, To Name Of Default App For File Type)
+
+[-HKEY_CLASSES_ROOT\AppName.Document\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From Word Docs
+
+[-HKEY_CLASSES_ROOT\Word.Document.8\shell\Print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Print From PowerPoint Docs
+
+[-HKEY_CLASSES_ROOT\PowerPoint.Show.8\shell\Print
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Eraser Text From Recycle Bin Right Click
+
+[-HKEY_CLASSES_ROOT\CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\Shell\Erasext]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Optimize with Perfect Disk from Drive Icon Right-Click
+
+[-HKEY_CLASSES_ROOT\Drive\shell\Optimize using PerfectDisk]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Record From Wave Files
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SoundRec\shell\record]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Search From Drive Icon
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Drive\shell\find]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Search From Folder
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\find]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove "Print" option from the context menu for image & text files
+
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell\print]
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\text\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable file association web-service - Bypassing "Browse web for program" to open unknown extension. "Open With..." becomes default
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"NoInternetOpenWith"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Windows Picture and Fax Viewer
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\image\ShellEx\ContextMenuHandlers\ShellImagePreview]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Remove WMP Right Click Options (Queue-it-up, etc.)
+
+[-HKEY_CLASSES_ROOT\CLSID\{CE3FB1D1-02AE-4a5f-A6E9-D9F1B4073E6C}]
+[-HKEY_CLASSES_ROOT\CLSID\{F1B9284F-E9DC-4e68-9D7E-42362A59F0FD}]
+[-HKEY_CLASSES_ROOT\CLSID\{8DD448E6-C188-4aed-AF92-44956194EB1F}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Nero Scout
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3D6BE802-FC0D-4595-A304-E611F97089DC}]
+@="Nero Scout"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Briefcase, and Rich-Text-Document from New Menu.
+
+[-HKEY_CLASSES_ROOT\.bfc\ShellNew]
+[-HKEY_CLASSES_ROOT\.rtf\ShellNew]
+[-HKEY_CLASSES_ROOT\.bmp\ShellNew]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove new Wav file
+
+[-HKEY_CLASSES_ROOT\.wav\ShellNew]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove new BMP file
+
+[-HKEY_CLASSES_ROOT\.bmp\ShellNew]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove new Word Document
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.doc\Word.Document.8\ShellNew]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.doc\Word.Document.8\ShellNew]
+"FileName"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.doc\Word.Document.8\ShellNew-]
+"FileName"="winword8.doc"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove new PowerPoint Document
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ppt\PowerPoint.Show.8\ShellNew]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ppt\PowerPoint.Show.8\ShellNew]
+"FileName"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ppt\PowerPoint.Show.8\ShellNew-]
+"FileName"="pwrpnt10.pot"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add new CMD file to right click > new
+
+[HKEY_CLASSES_ROOT\.cmd\ShellNew]
+"NullFile"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add new REG file to right click > new
+
+[HKEY_CLASSES_ROOT\.reg\ShellNew]
+"NullFile"=""

@@ -1,0 +1,339 @@
+Windows Registry Editor Version 5.00
+
+;================================================================================================
+; **************************************** General settings ****************************************
+;================================================================================================
+
+; Enable Remote Assitance
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"AllowTSConnections"=dword:00000001
+"fDenyTSConnections"=dword:00000000
+"fAllowToGetHelp"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set the power management settings
+
+[HKEY_CURRENT_USER\Control Panel\PowerCfg]
+"CurrentPowerPolicy"="0"
+
+[HKEY_CURRENT_USER\Control Panel\PowerCfg\GlobalPowerPolicy]
+"Policies"=hex:01,00,00,00,00,00,00,00,03,00,00,00,10,00,00,00,00,00,00,00,03,\
+  00,00,00,10,00,00,00,02,00,00,00,03,00,00,00,00,00,00,00,02,00,00,00,03,00,\
+  00,00,00,00,00,00,02,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,01,00,00,\
+  00,00,00,00,00,01,00,00,00,03,00,00,00,02,00,00,00,04,00,00,c0,01,00,00,00,\
+  04,00,00,00,01,00,00,00,0a,00,00,00,00,00,00,00,03,00,00,00,01,00,01,00,01,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,02,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,\
+  00,12,00,00,00
+
+[HKEY_CURRENT_USER\Control Panel\PowerCfg\PowerPolicies\0]
+"Name"="Home/Office Desk"
+"Description"="This scheme is suited to most home or desktop computers that are left plugged in all the time."
+"Policies"=hex:01,00,00,00,00,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,2c,01,00,00,32,32,00,03,04,00,00,00,04,00,\
+  00,00,00,00,3d,77,2e,f2,07,00,b0,04,00,00,2c,01,00,00,8c,0a,00,00,58,02,00,\
+  00,00,00,64,64,64,64,91,7c
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable screensavers
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"ScreenSaveActive"="0"
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"SCRNSAVE.EXE"=""
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"ScreenSaveActive"="0"
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"SCRNSAVE.EXE"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Ask for Password after screensaver
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"ScreenSaverIsSecure"="0"
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"NoAutoReturnToWelcome"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Tracking of Broken Shortcut Links
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoResolveTrack"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable the Desktop Cleanup Wizard
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\CleanupWiz]
+"NoRun"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change the Clock to 24 Hour time format
+
+[HKEY_CURRENT_USER\Control Panel\International]
+"iTime"="1"
+"iTLZero"="0"
+"sTime"=":"
+"sTimeFormat"="H:mm:ss"
+"iTimePrefix"="0"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable System Restore
+; Value: (00000001 = disabled, 00000000 = enabled)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
+"DisableSR"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Change location of my documents
+; Change the values as you wish
+; You can also use the "ProfilesDir" entrie in the winnt.sif file, under [Unattended] section, to change the name and location of Documents and Settings folder
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders]
+"Personal"   ="C:\\My Data"
+"My Video"   ="C:\\My Data\\My Video"
+"My Music"   ="C:\\My Data\\My Music"
+"My Pictures"="C:\\My Data\\My Pictures"
+"Favourites"  ="C:\\My Data\\Favourites"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change registered Owner/Organization
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion]
+"RegisteredOwner"="Your name"
+"RegisteredOrganization"="Your Organization"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Keyboard Num-Lock on
+
+[HKEY_CURRENT_USER\Control Panel\Keyboard]
+"InitialKeyboardIndicators"="2"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Sticky Keys (Popups up when pressing shift for some time, accessibility)
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Filter keys (Popups up when pressing shift for some time, accessibility)
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Toggle Keys (Popups up when pressing shift for some time, accessibility)
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Configuring the Registry Size Limit (win 2k only)  Value: (0xffffffff = maximum)
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control]
+"RegistrySizeLimit"=dword:ffffffff
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable USB/CDRom Autorun
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=dword:000000FF
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Automatically Start CD run (00000000=disable, 00000001=enable)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CDRom]
+"AutoRun"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Autorun for all Drive Types
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=dword:00000091
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Windows will tell you exactly what it is doing when it is shutting down or is booting
+; This is the same as Extended Mode in nLite´s Customizations at the "Welcome Screen" part
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"verbosestatus"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Increase the USB Polling Interval
+
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Class\Usb\0000]
+"IdleEnable"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Error Reporting
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PCHealth\ErrorReporting]
+"AllOrNone"=dword:00000001
+"DoReport"=dword:00000000
+"IncludeKernelFaults"=dword:00000000
+"IncludeMicrosoftApps"=dword:00000000
+"IncludeWindowsApps"=dword:00000000
+"ShowUI"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables Error Reporting, but notifies when critical errors occur
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PCHealth\ErrorReporting]
+"DoReport"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change Default Search Options (1 = ON, 0 = OFF)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"SearchSystemDirs"=dword:00000001
+"SearchHidden"=dword:00000001
+"IncludeSubFolders"=dword:00000001
+"CaseSensitive"=dword:00000000
+"SearchSlowFiles"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Classic Search
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
+"FullPath"=dword:00000001
+"FullPathAddress"=dword:00000001
+"Use Search Asst"="Yes"
+"Settings"=hex:0c,00,02,00,1b,01,e7,77,60,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable "Search Dog" and use advanced search
+
+[HKEY_CURRENT_USER\Software\Microsoft\Search Assistant]
+"Actor"=""
+"SocialUI"=dword:00000000
+"UsageCount"=dword:00000000
+"UseAdvancedSearchAlways"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Search All File Types
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ContentIndex]
+"FilterFilesWithUnknownExtensions"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Typing Long File Names In DOS
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+"CompletionChar"=dword:00000009
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Both Windows Logo Keys
+
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+;"Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,00,00,5b,e0,00,00,5c,e0,\
+;  00,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable left Windows Key
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+;"Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,00,00,5B,E0,00,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable  Windows Tour
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\Tour]
+"RunCount"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Applets\Tour]
+"RunCount"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turn off system beeps
+
+[HKEY_CURRENT_USER\Control Panel\Sound]
+"beep"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Detailed Info in Device Manager
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"DEVMGR_SHOW_DETAILS"=dword:00000001
+"DEVMGR_SHOW_NONPRESENT_DEVICES"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Places shortcut to Scanner or Camera on your desktop when you connect it with the USB cable
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\DelegateFolders\{E211B736-43FD-11D1-9EFB-0000F8757FCD}]
+@="Scanners & Cameras"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Windows File Protection (Can also be done with Nlite or Using patched files) 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"SFCSetting"=dword:ffffff9d
+"SFCDisable"=dword:ffffff9d
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Group Policy Duplication
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"SynchronousMachineGroupPolicy"=dword:00000000
+"SynchronousUserGroupPolicy"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Built in Windows CD Burning
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoCDBurning"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Make the Windows XP registration with Microsoft unnecessary
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion]
+"RegDone"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Userpasswords2 to control panel
+
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}]
+@="User Accounts 2"
+"InfoTip"="Starts The Windows 2000 style User Accounts dialog"
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}\DefaultIcon]
+@="%SystemRoot%\\\\System32\\\\nusrmgr.cpl,1"
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}\Shell]
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}\Shell\Open]
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}\Shell\Open\command]
+@="Control Userpasswords2"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{98641F47-8C25-4936-BEE4-C2CE1298969D}]
+@="Add Userpasswords2 to Control Panel"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove Alexa Spyware (comes built in Windows by default) Tweak not required for XP SP2
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Extensions\{c95fe080-8f5d-11d2-a20b-00aa003c157a}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Recycle Bin Uses 3% of Available Space Rather than 10%
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\BitBucket]
+"Percent"=dword:00000003
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Do Not Send Files to Recycle Bin (delete them completey)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\BitBucket]
+"NukeOnDelete"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off the recycle bin delete confirmation for all drives
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShellState"=hex:24,00,00,00,37,a8,01,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+  01,00,00,00,0d,00,00,00,00,00,00,00,02,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Windows Installer Logging can use logging to help assist in troubleshooting issues with installing software packages.Windows Installer will store the logs in the TEMP directory. The filename is random, but begins with the letters "Msi" and end with a .log extension.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer]
+"Logging"="voicewarmup"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Enable Remote Administration of Windows Installer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer]
+"EnableAdminTSRemote"=dword:00000001

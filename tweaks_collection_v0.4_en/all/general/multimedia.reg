@@ -1,0 +1,203 @@
+Windows Registry Editor Version 5.00
+
+;============================================================================================
+; ****************************************  Multimedia ****************************************
+;============================================================================================
+
+; Hide the Network tab in Media Player
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"HideNetworkTab"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Auto Upgrade with Windows Media Player
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"DisableAutoUpdate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Windows Media Player - Fit Video To Screen
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SnapToVideo"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Winamp Bookmark Context Menu when right clicking on folders
+
+[-HKEY_CLASSES_ROOT\Directory\shell\Winamp.Bookmark]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Winamp Bookmark Context Menu when right clicking on items
+
+[-HKEY_CLASSES_ROOT\Winamp.File\shell\ListBookmark]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Winamp Enqueue Context Menu when right clicking on folders
+
+;[-HKEY_CLASSES_ROOT\Directory\shell\Winamp.Enqueue]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Winamp Enqueue Context Menu when right clicking on items
+
+;[-HKEY_CLASSES_ROOT\Winamp.File\shell\Enqueue]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes Winamp Enqueue Context Menu when right clicking on playlists
+
+;[-HKEY_CLASSES_ROOT\Winamp.Playlist\shell\Enqueue]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;WMP title bar
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"Titlebar"="[Insert text here]"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Media Player EULA Auto accept (to prevent first-run on XPSP2)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+"GroupPrivacyAcceptance"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Don't accept shortcuts that splat themselves all over Windows
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Setup\UserOptions]
+"DesktopShortcut"="no"
+"QuickLaunchShortcut"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;WMP 9 and 10 Setup
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"AcceptedPrivacyStatement"=dword:00000001
+"FirstRun"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable automatic codec downloads
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"UpgradeCodecPrompt"=dword:00000001
+"StartInMediaGuide"=dword:00000000
+"ShowAppTitlebar"=dword:00000000
+"AlwaysOnTop"=dword:00000000
+"DoNotShowAnchor"=dword:00000001
+"EnableScreenSaver"=dword:00000000
+"PromptLicenseBackup"=dword:00000001
+"PlayerScriptCommandsEnabled"=dword:00000000
+"WebScriptCommandsEnabled"=dword:00000000
+"WebStreamsEnabled"=dword:00000001
+"MetadataRetrieval"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable Media Player identification (track-back) through Internetsites
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SendUserGUID"=hex:00
+;-----------------------------------------------------------------------------------------------------------------------------
+
+;Do Not Receive Media Player Licences automatically without prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SilentAcquisition"=dword:00000000
+"UsageTracking"=dword:00000000
+"DisableMRU"=dword:00000001
+"SaveDRMMusic"=dword:00000000
+"LibraryHasBeenRun"=dword:00000001
+"FullmodeTaskbar"=dword:00000001
+"UpgradeCheckFrequency"=dword:00000002
+"StretchToFit"=dword:00000001
+"LaunchIndex"=dword:00000003
+"Maximized"="0"
+"ShrinkToFit"=dword:00000000
+"ShowEffects"=dword:00000001
+"ShowFullScreenPlaylist"=dword:00000000
+"NowPlayingQuickHide"=dword:00000000
+"ShowTitles"=dword:00000001
+"ShowCaptions"=dword:00000001
+"TitlebarMouseover"=dword:00000000
+"ForceOnline"=dword:00000000
+"NowPlayingPlaylist"=dword:00000001
+"NowPlayingMetadata"=dword:00000001
+"NowPlayingSettings"=dword:00000000
+"VizAutoSelect"=dword:00000001
+"CurrentDisplayView"="VizView"
+"CurrentDisplayPreset"=dword:00000000
+"CurrentSettingsPreset"=dword:00000000
+"CurrentMetadataPreset"=dword:00000000
+"UserDisplayView"="VizView"
+"UserWMPDisplayView"="VizView"
+"UserWMPSettingsView"="EQView"
+"UserWMPMetadataView"="MediaInfoView"
+"UserDisplayPreset"=dword:00000000
+"UserWMPDisplayPreset"=dword:00000000
+"UserWMPSettingsPreset"=dword:00000000
+"UserWMPMetadataPreset"=dword:00000000
+"UserWMPShowSettings"=dword:00000000
+"UserWMPShowMetadata"=dword:00000000
+"CDRecordMP3"=dword:00000001
+"CDRecordMode"=dword:00000000
+"WMARecordRate"=dword:0000fa00
+"WMARecordQuality"=dword:00000000
+"MP3RecordRate"=dword:0002ee00
+"CDRecordDRM"=dword:00000000
+"AutoCopyCD"=dword:00000000
+"AutoEjectCD"=dword:00000000
+"AutoAddRemovable"=dword:00000000
+"AutoAddMusicToLibrary"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable Codec Downloads in Media Player Value: 
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCodecDownload"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCodecDownload"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Enable DVD in Media Player Value: Yes or No
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Player\Settings]
+"EnableDVDUI"="Yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Enable MP3 Encoding from right-click while browsing (need WMP9 or higher)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Settings\MP3Encoding]
+"HighRate"=dword:0004e200
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables Preview of Movie file formats (allowing you to move/rename/delete without errors)
+
+[-HKEY_CLASSES_ROOT\.avi\ShellEx]
+
+[-HKEY_CLASSES_ROOT\.mpg\ShellEx]
+
+[-HKEY_CLASSES_ROOT\.mpe\ShellEx]
+
+[-HKEY_CLASSES_ROOT\.mpeg\ShellEx]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Speed-up Access to AVI Media Files
+
+[-HKEY_CLASSES_ROOT\CLSID\{87D62D94-71B3-4b9a-9489-5FE6850DC73E}]
+
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.avi\shellex\PropertyHandler]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove WMP Right Click Options (Queue-it-up, etc.)
+
+[-HKEY_CLASSES_ROOT\CLSID\{F1B9284F-E9DC-4e68-9D7E-42362A59F0FD}]
+
+[-HKEY_CLASSES_ROOT\CLSID\{8DD448E6-C188-4aed-AF92-44956194EB1F}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; If you use the key below WMP will not be able to automatically play media files
+
+[-HKEY_CLASSES_ROOT\CLSID\{CE3FB1D1-02AE-4a5f-A6E9-D9F1B4073E6C}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show volume icon in the Task Tray
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\SysTray]
+"Services"=dword:0000001f

@@ -1,0 +1,102 @@
+Windows Registry Editor Version 5.00
+
+;=======================================================================
+;********* Unsorted and Untested - be careful before applying these ************
+;=======================================================================
+
+; Prioritize CMOS Real-Time Clock Using IRQ8 (2 of 2)
+
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+;"IRQ8Priority"=dword:00000001
+;"Win32PrioritySeparation"=dword:00000026
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; See with clicking "My documents" the "explored" Explorer view directly,...
+
+;[HKEY_CLASSES_ROOT\CLSID\{450D8FBA-AD25-11D0-98A8-0800361B1103}\shell]
+;@="Open"
+
+;[HKEY_CLASSES_ROOT\CLSID\{450D8FBA-AD25-11D0-98A8-0800361B1103}\shell\Open\command]
+;@="Explorer.exe /E,::{450D8FBA-AD25-11D0-98A8-0800361B1103}"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; See with clicking "network icon from desktop" the "explored" network directly,...
+
+;[HKEY_CLASSES_ROOT\CLSID\{208D2C60-3AEA-1069-A2D7-08002B30309D}\shell]
+;@="Open"
+
+;[HKEY_CLASSES_ROOT\CLSID\{208D2C60-3AEA-1069-A2D7-08002B30309D}\shell\Open\command]
+;@="Explorer.exe /E,::{208D2C60-3AEA-1069-A2D7-08002B30309D}"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Open Registry entries in Notepad by default.
+
+;[HKEY_CLASSES_ROOT\dllfile\shell]
+;@="Edit"
+
+;[HKEY_CLASSES_ROOT\dllfile\shell\Edit\command]
+;@="notepad.exe %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Programs: Set Notepad as default HTML viewer
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Default HTML Editor]
+;"Description"="Notepad"
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Default HTML Editor\shell\edit]
+;"@"="&Edit"
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Default HTML Editor\shell\edit\command]
+;"@"="C:\\WINDOWS\\notepad.exe %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Active Window Tracking  for XP Value: (0=disable, 1=enable) This tweak allows you to bring running programs to the foreground just by moving you mouse of the application window. This is similar to the X-Mouse feature found on UNIX operating systems.
+
+;[HKEY_CURRENT_USER\Control Panel\Desktop]
+;"UserPreferencesMask"=hex:ff, 3e, 00 00
+;"ActiveWindowTracking"=dword:00000001
+;"ActiveWndTrkTimeout"=dword:000003e8
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Reverse the Mouse Buttons (0 for normal, 1 = swap buttons)
+
+;[HKEY_CURRENT_USER\Control Panel\Mouse]
+;"SwapMouseButtons"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Manage Persistent Connections \This setting controls whether new network mappings should be created as persistent connections that are automatically reconnected at logon
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Network\Persistent Connections]
+;"SaveConnections"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Manage the QoS Packet Queuing This setting specifies the maximum number of outstanding packets permitted on the system. When the number of outstanding packets reaches this limit, the Packet Scheduler  postpones all submissions to network adapters until the number falls below this limit. Value max : 0000ffff (65535)
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Psched]
+;"MaxOutstandingSends"=dword:0000ffff
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Configure the TCP/IP Settings of a Network Adapter {Adapter} equals the service name of the installed NIC. For example 3COM 905 NIC's service name is 'El90x'
+
+;[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\{Adapter}\Parameters\Tcpip]
+;"IPAddress"=""
+;"SubnetMask"=""
+;"DefaultGateway"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes MSN Messenger From Startup
+
+;[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+;"MsnMsgr"=-
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Stop MSN Messenger from Running on Windows Startup
+
+;[HKEY_CURRENT_USER\Software\Microsoft\MSNMessenger]
+;"AppSettings"= hex:22,04,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; TabletPC - Disable Tutorial Splash Screen
+
+;[HKEY_CURRENT_USER\Software\Microsoft\tabletoobe]
+;"ShowTabletSplash"=dword:00000000

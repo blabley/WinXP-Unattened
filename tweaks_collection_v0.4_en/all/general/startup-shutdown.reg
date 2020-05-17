@@ -1,0 +1,61 @@
+Windows Registry Editor Version 5.00
+
+;===================================================================================================
+; **************************************** Startup / Shutdown ****************************************
+;===================================================================================================
+
+;Determines whether the Welcome to Windows splash screen, Welcome.exe,appears the next time the user logs on.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\tips]
+"Show"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Allows boot files to be placed optimally on the hard-drive for faster boots.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Speed up shutdown
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoEndTasks"="1"
+"HungAppTimeout"="100"
+"WaitToKillAppTimeout"="1000"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Automatic Restart in the event of a BSOD
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Prefetcher tweak (faster booting) boot and program prefetch use 00000003 or Boot only 00000002
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Modifying the Autocheck Time-out Value NTFS ONLY When Windows is not shutdown correctly it will perform an AutoCheck using CHKDSK on the next restart. This setting controls the time delay before running Autochk or whether it is run at all.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeOut"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Clear the Page File at System Shutdown for security  (makes shutdown slower when activated)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"ClearPageFileAtShutdown"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Hibernate
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power]
+"Heuristics"=hex:05,00,00,00,00,01,00,00,00,00,00,00,00,00,00,00,3f,42,0f,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Shutdown Event Tracker
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Reliability]
+"ShutdownReasonOn"=dword:00000000
+"ShutdownReasonUI"=dword:00000000

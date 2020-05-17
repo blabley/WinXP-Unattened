@@ -1,0 +1,240 @@
+Windows Registry Editor Version 5.00
+
+;================================================================================================
+; ****************************************  Other Software ****************************************
+;================================================================================================
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		MSN
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+;MSN Messenger: Disables - Auto Busy & Away & Disables the annoying MSN Today On Logon
+
+[HKEY_CURRENT_USER\Software\Microsoft\MSNMessenger]
+"EnableBusyDetect"=dword:00000000
+"EnableIdleDetect"=dword:00000000
+"AppSettings"=hex:22,02,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Prevents Windows Messenger from being installed
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
+"Disabled"=dword:00000001
+"PreventAutoRun"=dword:00000001
+"PreventAutoUpdate"=dword:00000001
+"PreventBackgroundDownload"=dword:00000001
+"PreventRun"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Prevents Windows Messenger from being updated
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
+"PreventAutoUpdate"=dword:00000001
+"PreventBackgroundDownload"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;disable balloon - Add your passport to XP messenger
+
+[HKEY_CURRENT_USER\Software\Microsoft\MessengerService]
+"PassportBalloon"=hex:0a,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Removes Sign up with Passport Wizard when trying to sign in Windows Messenger
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Passport]
+"RegistrationCompleted"=dword:00000001
+
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Notepad
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+;Notepad saves page setup and window positions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"fSavePageSettings"=dword:00000001
+"fSaveWindowPositions"=dword:00000001
+
+
+;--------------------------------------------------------------------------------------------------------------------------------
+;Enable status bar in notepad
+
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"StatusBar"=dword:00000001
+
+
+;--------------------------------------------------------------------------------------------------------------------------------
+;Tahoma font as default
+
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"lfFaceName"="Tahoma"
+
+
+;--------------------------------------------------------------------------------------------------------------------------------
+;Enable word wrap
+
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"fWrap"=dword:00000001
+
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Adobe Reader
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+;Disable Adobe automatic updates
+
+[HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\6.0\Updater]
+"iUpdateFrequency"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\7.0\Updater]
+"iUpdateFrequency"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Turn off Adobe splash screen
+
+[HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\6.0\Originals]
+"bBrowserCheck"=dword:00000001
+"bDisplayAboutDialog"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\7.0\Originals]
+"bBrowserCheck"=dword:00000001
+"bDisplayAboutDialog"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Adobe EULA
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Adobe\Acrobat Reader\6.0\AdobeViewer]
+"EULA"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\6.0\AdobeViewer]
+"EULA"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Adobe\Acrobat Reader\7.0\AdobeViewer]
+"EULA"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\7.0\AdobeViewer]
+"EULA"=dword:00000001
+
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Nero
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+;Show the real CD-recording speed in Nero  (example:  21.6x writing speed)
+
+[HKEY_CURRENT_USER\Software\Ahead\Nero - Burning Rom\Recorder]
+"ShowSingleRecorderSpeed"=dword:00000001
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Plex Tools
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+;Allows installing  PlexTools Upgrade as full version
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Juxtaposition]
+@="11111111"
+"Parameter"="11111111"
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Windows Messenger
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+; Don't let Windows Messenger load involuntarily at every boot-up
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
+"PreventAutoRun"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Prevent new ads being downloaded every 6 minutes in windows messenger
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MessengerService\Policies]
+"DisableCrossPromo"=hex:80
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Unbundle Windows Messenger from Outlook Express
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Outlook Express]
+"Hide Messenger"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Unbundle Windows Messenger from Outlook 2003
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\11.0\Outlook\InstantMessaging]
+"ForceDisableIM"=dword:00000001
+
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Office 2003
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+;Gets rid of tray icon for taking survey (office 2k3)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Common\Internet]
+"UseOnlineContent"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\Common]
+"QMEnable"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Enables Live Scrolling in Microsoft Word
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Word\Options]
+"LiveScrolling"="1"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\10.0\Word\Options]
+"LiveScrolling"="1"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\Word\Options]
+"LiveScrolling"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Get rid of 'EULA' dialog for MS-PowerPoint Viewer 2003
+
+[HKEY_CURRENT_USER\Software\Microsoft\PowerPoint Viewer\11.0]
+"EULAAccepted"=dword:00000001
+
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		TuneUp Utilities 2006
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+; Turns off ALL welcome screens for TuneUp services
+
+[HKEY_CURRENT_USER\Software\TuneUp\Utilities\5.0\WelcomeScreen]
+"ws_SystemOptimizer"=dword:00000000
+"ws_SystemControl"=dword:00000000
+"ws_RescueCenter"=dword:00000000
+"DisableCounter"=dword:00000003
+"ws_StartUpManager"=dword:00000000
+"ws_DiskCleaner"=dword:00000000
+"ws_IconEngineer"=dword:00000000
+"ws_MemOptimizer"=dword:00000000
+"ws_ProcessManager"=dword:00000000
+"ws_RegistryCleaner"=dword:00000000
+"ws_RegistryDefrag"=dword:00000000
+"ws_RegistryEditor"=dword:00000000
+"ws_Shredder"=dword:00000000
+"ws_SystemInformation"=dword:00000000
+"ws_Undelete"=dword:00000000
+"ws_UninstallManager"=dword:00000000
+"ws_UpdateWizard"=dword:00000000
+"ws_WinStyler"=dword:00000000
+
+;________________________________
+;+++++++++++++++++++++++++++++++++++++++++++++
+;		Macromedia Shockwave 10
+;+++++++++++++++++++++++++++++++++++++++++++++
+
+; Stop Shockwave from autoupdating and collecting statistics
+
+[HKEY_CURRENT_USER\Software\Macromedia\Shockwave 10\AutoUpdate]
+@="n"
+
+[HKEY_CURRENT_USER\Software\Macromedia\Shockwave 10\CollectStatistics]
+@="n"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Macromedia\Shockwave 10\AutoUpdate]
+@="n"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Macromedia\Shockwave 10\CollectStatistics]
+@="n"

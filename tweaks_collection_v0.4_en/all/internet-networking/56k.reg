@@ -1,0 +1,160 @@
+Windows Registry Editor Version 5.00
+
+;============================================================================================
+; **************************************** Dial-Up (56K) ****************************************
+;============================================================================================
+
+;; IMPORTANT NOTE FOR DIALUP USERS: Before you do anything, garantee you have these conditions to obtain maximum speed for your connection
+
+; * Download and install the latest drivers for your modem. It is a very important thing that you have the lastest updated drivers released by your modem´s manufacturer. Try to avoid Microsoft´s Default Drivers.
+; * Make sure your phone line is perfect, clean and shining. Your line MUST NOT have any noises or static.
+; * If your phone line is good, and when you get the phone and still hear noises, try to change the cables you use to connect. Maybe the problem is there.
+; * Another good thing to try is to search Initialization Strings and put it under the Extra Settings tab of the Configuration tab of you modem.
+
+; What's a modem initialization string?
+
+; Before your modem software dials a phone number, it initializes (inits) the modem by sending it a series (string) of commands, typically Hayes commands. These commands configure the modem's options for things like error correction, data compression, flow control, and many other parameters. The modem manual should list the Hayes commands the modem recognizes, and what effect each command has.
+
+; The important thing about modem init strings is that having the right one often makes the difference between connecting and not. Init strings are fairly specific to each modem. The string that made your friend's modem fly may not work at all for your modem.
+
+; You might start your search for your modem´s string here: http://www.56k.com/inits/a2z.shtml
+; They have a considering collection of modem strings in there. If even so, you don´t find anything, you might wanna try these generic strings. It is not guaranteed that they will work for you modem, but i costs nothing to try:
+
+;; AT&F
+;; AT&F1
+;; AT&F&C1&D2
+;; AT&F1&C1&D2
+
+;; (For K56flex modems, try one of these generic init strings:)
+;; AT&F+MS=56
+;; AT&F+MS=56S202=32
+;; AT&F1+MS=56
+;; AT&F1+MS=56S202=32
+
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;; Speeding up network browsing.
+;; There was a bug in windows 2000 that would cause the scheduled tasks folder to be searched when ever the user would browse network drives. Microsoft developed a fix for this bug. The fix fixed the problem and it also had nice side affect of speeding up browsing of Microsoft networks.  Below Tweak removes this folder from the registry.
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{2227A280-3AEA-1069-A2DE-08002B30309D}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;; Faster webpage tweak by giving priority to DNS lookup.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider]
+
+"DnsPriority"=dword:00000001
+"HostsPriority"=dword:00000001
+"LocalPriority"=dword:00000001
+"NetbtPriority"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;; Forward buffer memory tweak, this controls how much RAM TCP/IP uses for storing packet data in the router packet queue.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+
+"ForwardBufferMemory"=dword:00024a00
+"NumForwardPackets"=dword:0000024a
+"MaxForwardBufferMemory"=dword:00024a00
+"MaxNumForwardPackets"=dword:0000024a
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;; By default Windows 2K & XP cache everything in the DNS cache service, both correct and faulty DNS lookups. To increase performance by eliminating the caching of faulty DNS lookups, use the following:
+
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
+
+"NegativeCacheTime"=dword:00000000
+"NetFailureCacheTime"=dword:00000000
+"NegativeSOACacheTime"=dword:00000000 
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;; Cablenut modifications in the registry.
+;;
+;; (This setting will be the same if you use Cable Nut with these settings:)
+;;
+;; DefaultReceiveWindow = 8192
+;; DefaultSendWindow = 4096
+;; DisableAddressSharing = 1
+;; InitialLargeBufferCount = 20
+;; InitialMediumBufferCount = 48
+;; InitialSmallBufferCount = 64
+;; LargeBufferSize = 40960
+;; MaxFastTransmit = 6400
+;; MediumBufferSize = 15040
+;; PriorityBoost = 0
+;; SmallBufferSize = 1280
+;; TransmitWorker = 32
+;; FastSendDatagramThreshold = 1024
+;; EnableFastRouteLookup = 1
+;; EnablePMTUDiscovery = 1
+;; IgnorePushBitOnReceives = 0
+;; GlobalMaxTcpWindowSize = 8760
+;; MaxFreeTcbs = 4000
+;; MaxHashTableSize = 8192
+;; MaxNormLookupMemory = 1500000
+;; SackOpts = 1
+;; SynAttackProtect = 1
+;; Tcp1323Opts = 0
+;; TcpLogLevel = 1
+;; MaxDupAcks = 3
+;; TcpMaxHalfOpen = 100
+;; TcpMaxHalfOpenRetried = 80
+;; TcpRecvSegmentSize = 1460
+;; TcpSendSegmentSize = 1460
+;; TcpTimedWaitDelay = 30
+;; TcpUseRFC1122UrgentPointer = 0
+;; TcpWindowSize = 8760
+;; MaxConnectionsPer1_0Server = 8
+;; MaxConnectionsPerServer = 4
+;; DefaultTTL = 128
+;; DisableUserTOSSetting = 0
+;; TcpMaxDataRetransmissions = 6
+;; DefaultTOSValue = 90 
+
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters]
+"DefaultReceiveWindow"=dword:00002000
+"DefaultSendWindow"=dword:00001000
+"DisableAddressSharing"=dword:00000001
+"InitialLargeBufferCount"=dword:00000014
+"InitialMediumBufferCount"=dword:00000030
+"InitialSmallBufferCount"=dword:00000040
+"LargeBufferSize"=dword:0000A000
+"MaxFastTransmit"=dword:00001900
+"MediumBufferSize"=dword:00003AC0
+"PriorityBoost"=dword:00000000
+"SmallBufferSize"=dword:00000500
+"TransmitWorker"=dword:00000020
+"FastSendDatagramThreshold"=dword:00000400
+"IgnorePushBitOnReceives"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"EnableFastRouteLookup"=dword:00000001
+"EnablePMTUDiscovery"=dword:00000001
+"GlobalMaxTcpWindowSize"=dword:00002238
+"MaxFreeTcbs"=dword:00000FA0
+"MaxHashTableSize"=dword:00002000
+"MaxNormLookupMemory"=dword:0016E360
+"SackOpts"=dword:00000001
+"SynAttackProtect"=dword:00000001
+"Tcp1323Opts"=dword:00000000
+"TcpLogLevel"=dword:00000001
+"TcpMaxDupAcks"=dword:00000003
+"TcpMaxHalfOpen"=dword:00000064
+"TcpMaxHalfOpenRetried"=dword:00000050
+"TcpRecvSegmentSize"=dword:000005B4
+"TcpSendSegmentSize"=dword:000005B4
+"TcpTimedWaitDelay"=dword:0000001E
+"TcpUseRFC1122UrgentPointer"=dword:00000000
+"TcpWindowSize"=dword:00002238
+"DefaultTTL"=dword:00000080
+"DisableUserTOSSetting"=dword:00000000
+"TcpMaxDataRetransmissions"=dword:00000006
+"DefaultTOSValue"=dword:0000005A
+
+[HKEY_USERS\S-1-5-21-1482476501-602162358-682003330-500\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPer1_0Server"=dword:00000008
+"MaxConnectionsPerServer"=dword:00000004

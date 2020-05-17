@@ -1,0 +1,50 @@
+Windows Registry Editor Version 5.00
+
+;===============================================================================================
+;**************************************** Outlook Express ****************************************
+;===============================================================================================
+
+;Do Not Start MS-Messenger with Outlook Express
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Outlook Express]
+"Hide Messenger"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Fixes slowdown problem starting Outlook Express when you delete  Windows Messenger, and  it disables the splash screen
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FB7199AB-79BF-11d2-8D94-0000F875C541}\InProcServer32]
+"ThreadingModel"="Apartment"
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FB7199AB-79BF-11d2-8D94-0000F875C541}\LocalServer32]
+"ThreadingModel"="Apartment"
+@=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Unbundle Windows Messenger from Outlook Express
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Outlook Express]
+"Hide Messenger"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Block Executable Attachments in Outlook Express
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Outlook Express]
+"BlockExeAttachments"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Disable Account Changes in Outlook Express
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Outlook Express]
+"No Modify Accts"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Control the Ability to Use HTTP Mail in Outlook Express
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Outlook Express]
+"HTTP Mail Enabled"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Minimize Outlook to the System Tray
+
+[HKEY_Current_User\Software\Microsoft\Office\10.0\Outlook\Preferences]
+"MinToTray"=dword:00000001

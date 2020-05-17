@@ -1,0 +1,99 @@
+Windows Registry Editor Version 5.00
+
+;=======================================================================================
+; **************************************** Logon ****************************************
+;=======================================================================================
+
+; Set information to appear above name/password fields in logon prompt
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"LogonPrompt"="Whatever"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Monitor Power-off on the Logon Screen
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"PowerOffActive"="1"
+"ScreenSaveActive"="1"
+"SCRNSAVE.EXE"="(None)"
+[HKEY_USERS\.DEFAULT\Control Panel\PowerCfg]
+"CurrentPowerPolicy"="0"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Faster reboot time
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"EnableQuickReboot"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Automatic logon for Windows this will allow you to auto login. Replace InsertName value with the Username you want to autologin with. Replace InsertPassword value with the password corresponding to the Username specified.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"DefaultUserName"="InsertName"
+"DefaultPassword"="InsertPassword"
+"AutoAdminLogon"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Delete Special Accounts
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Administrator on the Welcome Screen Value: (1 = show Administrator)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList]
+"Administrator"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Fast User Switching
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"AllowMultipleTSSessions"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Welcome Screen and uses Classic Logon
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"LogonType"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables Backup System Files with Successful Boot
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"ReportBootOk"="0"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disabling Ctrl+Alt+Del
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"DisableCAD"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable unread mail message at welcome screen
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\UnreadMail]
+"MessageExpiryDays"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Custom message to display before logon
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+;"LegalNoticeCaption"="Type the caption for your message here"
+;"LegalNoticeText"="Type your message here"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change Account Picture
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Hints\Owner]
+"PictureSource"="C:\blahblahheressomepath\custom.bmp"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set custom logon box
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"GinaDll"="custom msgina.dll file"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set logon box background image
+
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"Wallpaper"="image source"

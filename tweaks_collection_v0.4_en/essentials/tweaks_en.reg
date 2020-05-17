@@ -1,0 +1,1573 @@
+Windows Registry Editor Version 5.00
+
+; XP Tweaks Collection.
+; Compiled by gugutz
+; For more info, please visit, visite ----> http://gugutz.co.nr/regtweaks
+
+; This file is segmented into these sections:
+
+; - General Settings
+; - General Customation
+; - Startup / Shutdown
+; - Logon
+; - Start Menu
+; - Context Menus
+; - Multimídia
+; - System Performance
+; - Ssecutiry
+; - Service Pack 2 Only
+; - Folder View & Taskbar
+; - Visual Effects
+; - Internet Explorer
+; - Outlook Express
+; - Windows Media Player
+; - Media Player (That comes with XP)
+
+
+; Okay then, lets begin.....
+
+
+;===================================================================================================
+; **************************************** General Settings ****************************************
+;===================================================================================================
+; Changes defaul Search Options
+; (1 = ON, 0 = OFF)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"SearchSystemDirs"=dword:00000001
+"SearchHidden"=dword:00000001
+"IncludeSubFolders"=dword:00000001
+"CaseSensitive"=dword:00000000
+"SearchSlowFiles"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+; Turns On Classic Search
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
+"FullPath"=dword:00000001
+"FullPathAddress"=dword:00000001
+"Use Search Asst"="Yes"
+"Settings"=hex:0c,00,02,00,1b,01,e7,77,60,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off "Search Dog" (that stupid dog that eats up 10 mb off your UXP CD) e uses Advanced Search
+; Note: This can easily be done with nLite instead of using this tweak.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Search Assistant]
+"Actor"=""
+"SocialUI"=dword:00000000
+"UsageCount"=dword:00000000
+"UseAdvancedSearchAlways"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Search for All File Types.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ContentIndex]
+"FilterFilesWithUnknownExtensions"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Typing long DOS file names.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+"CompletionChar"=dword:00000009
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Turns off "Windows Tour" (appears the first time you log on in a fresh installed system)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\Tour]
+"RunCount"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Applets\Tour]
+"RunCount"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+; Makes XP registration with MS unecessary.
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion]
+"RegDone"="1"
+
+
+;===================================================================================================
+; **************************************** General Customation ****************************************
+;===================================================================================================
+
+; Adds "Printers and Faxes" to My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{2227A280-3AEA-1069-A2DE-08002B30309D}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds "Recycler" to My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{645FF040-5081-101B-9F08-00AA002F954E}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds "Network Connections" to My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{7007ACC7-3202-11D1-AAD2-00805FC1270E}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Adminstrative Tools" to My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{D20EA4E1-3957-11D2-A40B-0C5020524153}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds "Scheduled Tasks" to My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Shows "Control Panel" in My Computer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideMyComputerIcons]
+"{21EC2020-3AEA-1069-A2DD-08002B30309D}"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Command Prompt Enhancements:  Tab key completes path + filenames, UNC checks off
+
+; Set an exotic Command Prompt colour First value is background second is foreground eg. 0000000a = light green on black
+; 0=black	8=grey
+; 1=blue	9=light blue
+; 2=green	a=light green
+; 3=aqua	b=light aqua
+; 4=red	c=light red
+; 5=purple	d=light purple
+; 6=yellow	e=light yellow
+; 7=white	f=bright white
+ 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor]
+"CompletionChar"=dword:00000009
+"PathCompletionChar"=dword:00000009
+"DisableUNCCheck"=dword:00000001
+"EnableExtensions"=dword:00000001
+"DefaultColor"=dword:00000090
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes "More Themes Online..." option in the Themes dropdown box
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\DownloadSites]
+
+;===================================================================================================
+; ************************************ Startup / Shutdown ************************************
+;===================================================================================================
+
+
+; Allows boot files to be placed optimally on the hard-drive for faster boots.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Speed up shutdown
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoEndTasks"="1"
+"HungAppTimeout"="1500"
+"WaitToKillAppTimeout"="1500"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Automatic Restart in the event of a BSOD
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Prefetcher tweak (faster booting) boot and program prefetch use 00000003 or Boot only 00000002
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Modifying the Autocheck Time-out Value
+; NTFS ONLY: When Windows is not shutdown correctly it will perform an AutoCheck using CHKDSK on the next restart.
+; This setting controls the time delay before running Autochk or whether it is run at all.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager]
+"AutoChkTimeOut"=dword:00000002
+
+
+
+
+;=======================================================================================
+; **************************************** Logon ****************************************
+;=======================================================================================
+
+; Enable Monitor Power-off on the Logon Screen
+
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"PowerOffActive"="1"
+"ScreenSaveActive"="1"
+"SCRNSAVE.EXE"="(None)"
+[HKEY_USERS\.DEFAULT\Control Panel\PowerCfg]
+"CurrentPowerPolicy"="0"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Faster reboot time
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"EnableQuickReboot"="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Delete Special Accounts
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Administrator on the Welcome Screen
+;  Value: (1 = show Administrator)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList]
+"Administrator"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable unread mail message at Welcome Screen
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\UnreadMail]
+"MessageExpiryDays"=dword:00000000
+
+
+;=====================================================================================================
+; *********************************************  Start Menu ********************************************
+;=====================================================================================================
+
+; Start menu Items: Hide/Show/Cascade.
+; dword: 00000000= Don't display 
+; dword: 00000001= Display as a link (Default)
+; dword: 00000002= Display as a menu (Cascade)
+
+; Show Favorites
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"StartMenuFavorites"=dword:00000001 
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Help and Support link
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowHelp"=dword:00000001 
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Computer 
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyComputer"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Documents
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyDocs"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Music
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyMusic"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show My Pictures
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowMyPics"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Network Connections
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowNetConn"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Printers and Faxes
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"Start_ShowPrinters"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; No Recent Docs menu
+; Removes the recent documents from the start menu.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRecentDocsMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change MenuShowDelay (Start Menu load speed)
+; Default is 400. This adjustment will speed up the openning of items in your Start Menu
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="50"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove "Set programs access default" from startmenu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSMConfigurePrograms"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable scrolling in start menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_ScrollPrograms"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Highlighting New Programs on Start Menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_NotifyNewApps"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Administrative Tools in your Start Menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_AdminToolsRoot"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set icon size for start menu 
+; 1 = Large / 0 = Small Icons
+; Note: Value set to 0 (Small Icons)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_LargeMFUIcons"=dword:00000000
+
+
+;===============================================================================================
+; ****************************************  Context Menus **************************************** 
+;===============================================================================================
+
+; Adds Control Panel to right click of My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Control Panel\command]
+@="rundll32.exe shell32.dll,Control_RunDLL"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Add/Remove to right click of My Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Add/Remove Programs\command]
+@="control appwiz.cpl"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Services to right click of My Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\services]
+@=hex(2):53,00,65,00,72,00,76,00,69,00,63,00,65,00,73,00,00,00
+"SuppressionPolicy"=dword:4000003c
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\services\command]
+@=hex(2):25,00,77,00,69,00,6e,00,64,00,69,00,72,00,25,00,5c,00,73,00,79,00,73, 00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,63,00,2e,00,65,00,78,00, ;65,00,20,00,2f,00,73,00,20,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52, 00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00, ;32,00,5c,00,73,00,65,00,72,00,76,00,69,00,63,00,65,00,73,00,2e,00,6d,00,73, 00,63,00,20,00,2f,00,73,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Device Manager to right click of My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\DevMgr]
+@="Device Manager"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\DevMgr\command]
+@="mmc.exe %%SYSTEMDRIVE%%\\WINDOWS\\SYSTEM32\\devmgmt.msc"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Registry Editor right click of My Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\regedit]
+@="Registry Editor"
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\regedit\command]
+@="Regedit.exe"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Logoff to right click of My Computer
+; The [ ] are to group these common tasks (Logoff, Restart and Turn Off)
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Logoff]\command]
+@="shutdown -l -f -t 5"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Reboot to right click of My Computer
+; The [ ] are to group these common tasks (Logoff, Restart and Turn Off)
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Restart]\command]
+@="shutdown -r -f -t 5"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds Shutdown to right click of My Computer
+; The [ ] are to group these common tasks (Logoff, Restart and Turn Off)
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\[Turn Off]\command]
+@="shutdown -s -f -t 5"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds MSCONFIG right click of My Computer
+
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\msconfig]
+@="Microsoft Configurator"
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\msconfig\command]
+@="msconfig.exe"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Esconder a opção "Executar como..." do Menu de Contexto
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"HideRunAsVerb"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Mostrar Comandos de Encriptação no Menu de Atalhos
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EncryptionContextMenu"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Makes a right click option for unknown files to Open with notepad
+
+[HKEY_CLASSES_ROOT\*\shell]
+@="\"notepad.exe %1\""
+[HKEY_CLASSES_ROOT\*\shell\open]
+@="Open &With Notepad"
+[HKEY_CLASSES_ROOT\*\shell\open\command]
+@="notepad.exe %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add register / unregister to the context menu for .dll files
+
+[HKEY_CLASSES_ROOT\.dll]
+"Content Type"="application/x-msdownload"
+@="dllfile"
+[HKEY_CLASSES_ROOT\dllfile]
+@="Application Extension"
+[HKEY_CLASSES_ROOT\dllfile\Shell\Register\command]
+@="regsvr32.exe \"%1\""
+[HKEY_CLASSES_ROOT\dllfile\Shell\UnRegister\command]
+@="regsvr32.exe /u \"%1\""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+;Add register / unregister to the context menu for .ocx files
+
+[HKEY_CLASSES_ROOT\.ocx]
+@="ocxfile"
+[HKEY_CLASSES_ROOT\ocxfile]
+@="OCX"
+[HKEY_CLASSES_ROOT\ocxfile\Shell\Register\command]
+@="regsvr32.exe \"%1\""
+[HKEY_CLASSES_ROOT\ocxfile\Shell\UnRegister\command]
+@="regsvr32.exe /u \"%1\""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+
+; Adds "Command Promtp Here" to right click context menu
+
+[HKEY_CLASSES_ROOT\Directory\shell\Command Prompt Here]
+@="Command Prompt Here"
+[HKEY_CLASSES_ROOT\Directory\shell\Command Prompt Here\command]
+@="cmd.exe /k cd %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; All items will have an "Edit.." option on right-click and will be sent to notepad
+
+[HKEY_CLASSES_ROOT\*\shell\open]
+@="Edit.."
+[HKEY_CLASSES_ROOT\*\shell\open\command]
+@="notepad.exe %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; This adds an option in the right-click (context) menu to open any folder on your computer in a new window.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\openNew]
+@="Open In New Window"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\openNew\Command]
+@="explorer %1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Edit .nfo files with notepad
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithList]
+"a"="NOTEPAD.EXE"
+"MRUList"="a"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithProgids]
+"nfo_auto_file"=hex(0):
+;--------------------------------------------------------------------------------------------------------------------------------
+ 
+; Remove Print From Internet Shortcut
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\InternetShortcut\shell\print]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable file association web-service
+; This bypass "Browse web for program" to open unknown extension. "Open With..." becomes default
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"NoInternetOpenWith"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the creation of Briefcase and Rich-Text-Document file types from "New" Menu (Right Click > New).
+
+[-HKEY_CLASSES_ROOT\.bfc\ShellNew]
+[-HKEY_CLASSES_ROOT\.rtf\ShellNew]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the creation of Wave (.wav)  file types from "New" Menu (Right Click > New).
+
+[-HKEY_CLASSES_ROOT\.wav\ShellNew]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the creation of Bitmap (.bmp)  file types from "New" Menu (Right Click > New).
+
+[-HKEY_CLASSES_ROOT\.bmp\ShellNew]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the creation of Word Documents (.doc)  file types from "New" Menu (Right Click > New).
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.doc\Word.Document.8\ShellNew]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.doc\Word.Document.8\ShellNew]
+"FileName"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.doc\Word.Document.8\ShellNew-]
+"FileName"="winword8.doc"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Removes the creation of PowerPoint Documents (.ppt)  file types from "New" Menu (Right Click > New).
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ppt\PowerPoint.Show.8\ShellNew]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ppt\PowerPoint.Show.8\ShellNew]
+"FileName"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.ppt\PowerPoint.Show.8\ShellNew-]
+"FileName"="pwrpnt10.pot"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds the creation of Batch (.cmd)  file types to "New" Menu (Right Click > New).
+
+[HKEY_CLASSES_ROOT\.cmd\ShellNew]
+"NullFile"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds the creation of Registry (.reg)  file types to "New" Menu (Right Click > New).
+
+[HKEY_CLASSES_ROOT\.reg\ShellNew]
+"NullFile"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds the creation of Extensible HyperText Markup Language (.xhtml)  file types to "New" Menu (Right Click > New).
+
+[HKEY_CLASSES_ROOT\.xhtml\ShellNew]
+"NullFile"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds the creation of Hypertext Preprocessor (.php)  file types to "New" Menu (Right Click > New).
+
+[HKEY_CLASSES_ROOT\.php\ShellNew]
+"NullFile"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds the creation of Cascading Style Sheets (.css)  file types to "New" Menu (Right Click > New).
+
+[HKEY_CLASSES_ROOT\.css\ShellNew]
+"NullFile"=""
+
+
+;============================================================================================
+; ****************************************  Multimedia ****************************************
+;============================================================================================
+
+; Disables Preview of Movie file formats (allowing you to move/rename/delete without errors)
+
+[-HKEY_CLASSES_ROOT\.avi\ShellEx]
+[-HKEY_CLASSES_ROOT\.mpg\ShellEx]
+[-HKEY_CLASSES_ROOT\.mpe\ShellEx]
+[-HKEY_CLASSES_ROOT\.mpeg\ShellEx]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Speed-up Access to AVI Media Files
+
+[-HKEY_CLASSES_ROOT\CLSID\{87D62D94-71B3-4b9a-9489-5FE6850DC73E}]
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.avi\shellex\PropertyHandler]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Prevent Windows Media Player to automatically  play media files
+
+[-HKEY_CLASSES_ROOT\CLSID\{CE3FB1D1-02AE-4a5f-A6E9-D9F1B4073E6C}]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show volume icon in the Task Tray
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\SysTray]
+"Services"=dword:0000001f
+
+
+;===================================================================================================
+; **************************************** Sytem Performance  ****************************************
+;===================================================================================================
+
+; Improve file system performance (Speed up NTFS)
+; Note: these have been reported to cause non-compatibility with DOS/Win9x-based apps/games
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+"Win95TruncatedExtensions"=dword:00000001
+"Win31FileSystem"=dword:00000000
+;------------------------------------------------------------------------------
+
+; Speed up opening of My Computer and Explorer
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stisvc]
+"Start"=dword:00000002
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"NoNetCrawling"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRemoteRecursiveEvents"=dword:00000001
+;------------------------------------------------------------------------------
+
+; Force DLL To Unload From Memory
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AlwaysUnloadDLL]
+@="1"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disables DOS Filenames
+; May cause problems with old DOS based applications
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisable8dot3NameCreation"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; To be used manually when windows will not set hard drives or optical drives to DMA mode 
+; Note:This tweak does not mean that your drives will be in DMA mode, you will still have to do that yourself
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96A-E325-11CE-BFC1-08002BE10318}\0001]
+"MasterDeviceTimingModeAllowed"=dword:ffffffff
+"SlaveDeviceTimingModeAllowed"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E96A-E325-11CE-BFC1-08002BE10318}\0002]
+"MasterDeviceTimingModeAllowed"=dword:ffffffff
+"SlaveDeviceTimingModeAllowed"=dword:ffffffff
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Speeds up copying/moving of zip files (disable windows built in zip functionality)
+
+[-HKEY_CLASSES_ROOT\.zip\CompressedFolder]
+[-HKEY_CLASSES_ROOT\CLSID\{E88DCCE0-B7B3-11d1-A9F0-00AA0060FA31}]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CompressedFolder]
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Kernel Paging; Optimize Core System Performance
+; Note: This tweak is only recommended if you have more than 256 of RAM.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"DisablePagingExecutive"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Multiple Explorer Processes making it more stable
+; Note: This tweak will make Windows work like Linux, witch open each process separatelly
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"DesktopProcess"=dword:00000001
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Disable the NTFS Last Access Time Stamp (speeds up viewing folders in ntfs)
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show "Run in Separate Memory Space" Option to run 16 bit programs in VDM
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"MemCheckBoxInRunDlg"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"MemCheckBoxInRunDlg"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Opens 16-bit apps in a separate memory space
+; This increases stability when dealing with 16-bit apps.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WOW]
+"DefaultSeparateVDM"="Yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Otimizar Disco Rígido quando inativo.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000001
+
+
+;=========================================================================================
+;*************************************** Security ***************************************
+;=========================================================================================
+
+; Disable remote assistance / Remote-Desktop
+; for the sake of security - disables hacking Terminal Server
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"fAllowToGetHelp"=dword:00000000
+"fDenyTSConnections"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Default Hidden Shares
+; This keeps Windows from creating the  Admin$, C$, etc. shares (which are security holes) automatically on start-up.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\parameters]
+"AutoShareWks"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"AutoShareServer"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Fix for DSO Exploit that Spybot complains about.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0]
+"1004"=dword:00000003
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Make the Administartors group the owner of files instead of the individual Administrator account.
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
+"nodefaultadminowner"=dword:00000000
+
+
+;======================================================================================================
+; ************************************** Service Pack 2 Only *************************************
+;======================================================================================================
+
+; Gets rid of annoying popup for running files you download from internet.
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
+"CheckExeSignatures"="no"
+"RunInvalidSignatures"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
+"LowRiskFileTypes"=".zip;.rar;.nfo;.txt;.exe;.bat;.com;.cmd;.reg;.msi;.htm;.html;.gif;.bmp;.jpg;.avi;.mpg;.mpeg;.mov;.mp3;.m3u;.wav;"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove display of zone information in file properties
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"HideZoneInfoOnProperties"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't search Windows Update for drivers (when new Hardware is detected)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DriverSearching]
+"DontSearchWindowsUpdate"=dword:00000001
+"DontPromptForWindowsUpdate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable indvidual parts of the Security Center.
+; The tweaks below are not needed if the security service is disabled.
+
+; These registry tweaks overrides the Antivirus/Firewall monitoring, useful if you want to monitor your own 3rd party Antivirus/Firewall software which the Security Center can't detect.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center]
+"AntiVirusDisableNotify"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Firewall Notifications.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center]
+"FirewallDisableNotify"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Automatic Updates Notifications.
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center]
+"UpdatesDisableNotify"=dword:00000001
+
+
+;======================================================================================================
+; ********************************* Folder View & Taskbar *******************************
+;======================================================================================================
+
+; Removes "Shared Documents" from My Computer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSharedDocuments"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Active Desktop
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoActiveDesktop"=dword:00000001
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Wrap Icon Titles
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"IconTitleWrap"="1"
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Use small icons
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\SmallIcons]
+"SmallIcons"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Remove "Language Bar"
+
+[-HKEY_CLASSES_ROOT\CLSID\{540D8A8B-1C3F-4E32-8132-530F6A502090}]
+@=-
+"MenuTextPUI"=-
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable "Quick Launch Bar" right at first logon
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Streams\Desktop]
+"TaskbarWinXP"=hex:0c,00,00,00,08,00,00,00,02,00,00,00,00,00,00,00,b0,e2,2b,\
+d8,64,57,d0,11,a9,6e,00,c0,4f,d7,05,a2,22,00,1c,00,0a,01,00,00,1a,00,00,00,\
+01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,4c,00,00,00,01,14,02,00,00,\
+00,00,00,c0,00,00,00,00,00,00,46,83,00,00,00,10,00,00,00,a0,b0,48,5e,89,8d,\
+bd,01,00,d8,9e,e4,2a,8d,bd,01,00,45,fe,5e,89,8d,bd,01,00,00,00,00,00,00,00,\
+00,01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,13,01,14,00,1f,0f,e0,4f,\
+d0,20,ea,3a,69,10,a2,d8,08,00,2b,30,30,9d,19,00,23,44,3a,5c,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,cd,97,15,00,31,00,00,00,00,00,af,24,5c,\
+b9,10,80,57,69,6e,6e,74,00,00,20,00,31,00,00,00,00,00,af,24,a3,b9,10,00,50,\
+72,6f,66,69,6c,65,73,00,50,52,4f,46,49,4c,45,53,00,19,00,31,00,00,00,00,00,\
+c1,24,08,92,10,00,69,65,35,30,30,2e,30,30,30,00,00,28,00,31,00,00,00,00,00,\
+c1,24,08,92,10,00,41,70,70,6c,69,63,61,74,69,6f,6e,20,44,61,74,61,00,41,50,\
+50,4c,49,43,7e,31,00,21,00,31,00,00,00,00,00,c5,22,9d,91,10,00,4d,69,63,72,\
+6f,73,6f,66,74,00,4d,49,43,52,4f,53,7e,31,00,29,00,31,00,00,00,00,00,d3,22,\
+32,a6,10,00,49,6e,74,65,72,6e,65,74,20,45,78,70,6c,6f,72,65,72,00,49,4e,54,\
+45,52,4e,7e,31,00,24,00,31,00,00,00,00,00,db,22,76,ba,10,00,51,75,69,63,6b,\
+20,4c,61,75,6e,63,68,00,51,55,49,43,4b,4c,7e,31,00,00,00,8d,00,00,00,1c,00,\
+00,00,01,00,00,00,1c,00,00,00,36,00,00,00,0d,f0,ad,ba,8c,00,00,00,1a,00,00,\
+00,03,00,00,00,e7,18,2d,23,10,00,00,00,49,45,35,30,30,5f,58,31,43,00,43,3a,\
+5c,57,49,4e,4e,54,5c,50,72,6f,66,69,6c,65,73,5c,49,45,35,30,30,2e,30,30,30,\
+5c,41,70,70,6c,69,63,61,74,69,6f,6e,20,44,61,74,61,5c,4d,69,63,72,6f,73,6f,\
+66,74,5c,49,6e,74,65,72,6e,65,74,20,45,78,70,6c,6f,72,65,72,5c,51,75,69,63,\
+6b,20,4c,61,75,6e,63,68,00,00,10,00,00,00,05,00,00,a0,1a,00,00,00,a3,00,00,\
+00,00,00,00,00,08,00,00,00,02,00,00,00,cc,00,00,00,01,00,00,00,03,00,00,00,\
+4a,00,00,00,01,00,00,00,40,00,32,00,e6,01,00,00,c4,24,15,9f,20,00,4c,61,75,\
+6e,63,68,20,49,6e,74,65,72,6e,65,74,20,45,78,70,6c,6f,72,65,72,20,42,72,6f,\
+77,73,65,72,2e,6c,6e,6b,00,4c,41,55,4e,43,48,7e,32,2e,4c,4e,4b,00,00,00,40,\
+00,00,00,02,00,00,00,36,00,32,00,48,02,00,00,c4,24,15,9f,20,00,4c,61,75,6e,\
+63,68,20,4f,75,74,6c,6f,6f,6b,20,45,78,70,72,65,73,73,2e,6c,6e,6b,00,4c,41,\
+55,4e,43,48,7e,31,2e,4c,4e,4b,00,00,00,36,00,00,00,00,00,00,00,2c,00,32,00,\
+51,00,00,00,ec,22,46,39,20,00,53,68,6f,77,20,44,65,73,6b,74,6f,70,2e,73,63,\
+66,00,53,48,4f,57,44,45,7e,31,2e,53,43,46,00,00,00,52,00,00,00,e0,00,00,00,\
+00,00,00,00,16,00,00,00,00,00,00,00,00,00,00,00,16,00,00,00,00,00,00,00,01,\
+00,00,00,01,00,00,00,aa,4f,28,68,48,6a,d0,11,8c,78,00,c0,4f,d9,18,b4,37,02,\
+00,00,e0,00,00,00,00,00,00,00,16,00,00,00,00,00,00,00,00,00,00,00,16,00,00,\
+00,00,00,00,00,01,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Don't Group Similar Taskbar Buttons
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarGlomming"=dword:00000000
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarGlomming"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Automatic Hiding of Inactive Tray Icons
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"EnableAutoTray"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Stop Applcations from stealing the focus with pop ups
+
+[HKEY_CURRENT_USER\Control Panel\desktop]
+"ForegroundLockTimeout"=dword:00030d40
+"ForegroundFlashCount"=dword:00000003
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Control Panel Classic View 
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"ForceClassicControlPanel"=dword:00000001
+;-------------------------------------------------------------------------------------------------------------------------------
+
+; Display detail on windows explorer
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams]
+"Settings"=hex:08,00,00,00,04,00,00,00,01,00,00,00,00,77,7e,13,73,35,cf,11,ae,\
+69,08,00,2b,2e,12,62,04,00,00,00,10,00,00,00,43,00,00,00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display drives in longhorn mode
+
+; 0 = windows default
+; 1 = only network drive's letters shown.
+; 2 = no drive letters shown
+; 4 = all drive letters shown
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowDriveLettersFirst"=dword:00000004
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show file extensions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show protected operating system files
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\SuperHidden]
+"DefaultValue"=dword:00000000
+ [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSuperHidden"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Hidden Files and Folders 
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Hidden"=dword:00000000    
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display contents of system folders and C:\ (protected folder)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"WebViewBarricade"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Cache more Icons
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"Max Cached Icons"="4096"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Run explorer from clicking at My Computer
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell]
+@="Explorer"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\Explorer\Command]
+@="explorer.exe /e,/n,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+
+; Cached "Folder-View Settings"
+; Currently at 250 (to acelerate browsing in local folders)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell]
+"BagMRU Size"=dword:000000FA
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam]
+"BagMRU Size"=dword:000000FA
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show Thumbnail for bitmap files
+
+[HKEY_CLASSES_ROOT\Paint.Picture\DefaultIcon]
+"%1"=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Mostrar Ícones em Alta Resolução de Cores
+; 4 - 16 cores
+; 8 - 256 cores
+; 16 - 65536 cores
+; 24 - 16.7 milhões de cores 
+
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"Shell Icon BPP"="24"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Improve Thumbnail Quality
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"ThumbnailQuality"=dword:00000064
+
+
+;======================================================================================================
+; **************************************** Visual Effects ***********************************************
+;======================================================================================================
+
+
+; Changes Windows Appearance
+; This is the same as going to Properties of My Computer > Performance > Advanced
+; Values:
+; 1 - Set to best appearance
+; 2 - Set to best performance
+; 3 - Customized (you can customize using the tweaks bellow)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualFXSetting"=dword:00000001
+
+;==========================================
+; Tweaks for customizing Windows Appearance
+; Discoment them if you choose the value "3" 
+; in the above tweak and modify as you wish.
+;==========================================
+
+; Animates Minimizing / Maximizing
+
+;[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+;"MinAnimate"="1"
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Slide Toolbar Buttons
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"TaskbarAnimations"=dword:00000001
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Show translucid selection rectangle
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"ListviewAlphaSelect"=dword:00000001
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Show Window content while draging
+
+;[HKEY_CURRENT_USER\Control Panel\Desktop]
+;"DragFullWindows"="1"
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Use screen fonts with rounded corners
+; Values: 0 = Don´t use / 2 = Use
+
+;[HKEY_CURRENT_USER\Control Panel\Desktop]
+;"FontSmoothing"="2"
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Use background image to each type of folder
+; Music folder will have that musical note on the corner, etc etc...
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"ListviewWatermark"=dword:00000001
+
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Use shadow to icon´s labels on the Desktop
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"ListviewShadow"=dword:00000001
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Use common folder tasks
+
+;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+;"WebView"=dword:00000001
+
+;---------------------------------------------------------------------------------------------------------------------------
+
+; Enable ClearType
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+[HKEY_USERS\.DEFAULT\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+
+
+;=================================================================================================
+; **************************************** Internet Explorer ****************************************
+;=================================================================================================
+
+; Max your Internet Explorer's simultaneous downloads to 10 (default was 2)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPerServer"=dword:00000032
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Make IE address bar search like Mozilla
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl]
+@="http://www.google.com/keyword/%s"
+"provider"="gogl"
+" "="+"
+"&"="%26"
+"+"="%2B"
+"#"="%23"
+"?"="%3F"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Internet Explorer "Send information to the Internet" prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3]
+"1601"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Internet Explorer Auto-Complete prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\IntelliForms]
+"AskUser"=dword:00000000
+
+; and...
+
+; Sets Auto-Complete to full on
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete]
+"AutoSuggest"="yes"
+"Append Completion"="yes"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Use FormSuggest"="yes"
+"FormSuggest Passwords"="yes"
+"FormSuggest PW Ask"="yes"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\New Windows]
+"PopupMgr"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add Google As Main Start Page 
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Start Page"="http://www.google.com/"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Add Google As Main/default Search Page
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Use Search Asst"="no"
+"Search Page"="http://www.google.com"
+"Search Bar"="http://www.google.com/ie_rsearch.html"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchURL]
+@="http://www.google.com/keyword/%s"
+"provider"="gogl"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://www.google.com/ie_rsearch.html"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Adds search keywords to Internet Explorer address bar
+
+; In this order: 
+; 1º - Microsoft Knowledge Base
+; 2º - Altavista
+; 3º - Google
+; 4º - MSN
+; 5º -  Headlight´s FileMirrors
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\MSKB]
+@="http://support.microsoft.com/?kbid=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\AV]
+@="http://www.altavista.com/sites/search/web?q=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\g]
+@="http://www.google.com/search?q=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\MSN]
+@="http://search.msn.com/results.asp?q=%s"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchUrl\FM]
+@="http://www.filemirrors.com/search.src?file=%s"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Set the ID for which cookies get allotted
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EmailName"="qualquer@um.com"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Skips the Internet Connection Wizard (which comes the first time you start IE6)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Connection Wizard]
+"Completed"=hex:01,00,00,00
+"DesktopChanged"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Internet Explorer Status Bar
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"StatusBarWeb"=dword:00000001
+
+; and...
+
+; Show Statusbar in all windows
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"StatusBarOther"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Always expand ALT text for images
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Expand Alt Text"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable automatically check for internet updates
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoUpdateCheck"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable "Install on Demand" (other)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoWebJITSetup"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable page transitions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Page_Transitions"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable personalized favourites menu
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"FavIntelliMenus"="NO"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable third party browser extensions
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable Browser Extensions"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable visual styles on buttons and controls in web pages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"UseThemes"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Force offscreen compositing even under terminal server
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Force Offscreen Composition"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Notify when add-ons disabled
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NotifyControlDisable"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Notify when downloads complete
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NotifyDownloadComplete"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Reuse windows for launching shortcuts
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"AllowWindowReuse"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show friendly HTTP error messages
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Friendly http errors"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use Smooth Scrolling
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"SmoothScroll"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Display java applets blocked dialog
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"DisplayJavaHardeningDlg"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable automatic image resizing
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable AutoImageResize"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable Image Toolbar
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Enable_MyPics_Hoverbar"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show image download placeholders
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Show image placeholders"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; "Advanced" tab's settings (set for fast-browsing)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Show_ChannelBand"="No"
+"Cache_Update_Frequency"="Once_Per_Session"
+"Show_StatusBar"="yes"
+"Show_ToolBar"="yes"
+"Show_URLinStatusBar"="yes"
+"Show_URLToolBar"="yes"
+"Start Page"="about:blank"
+"Use_DlgBox_Colors"="yes"
+"FullScreen"="no"
+"Show_FullURL"="no"
+"ShowedCheckBrowser"="Yes"
+"Check_Associations"="No"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use HTTP 1.1
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableHttp1_1"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use HTTP 1.1 através de configurações de proxy
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"ProxyHttp1.1"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Check for server certificate revocation
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"CertificateRevocation"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Do not save encrypted pages to disk
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"DisableCachingOfSSLPages"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable integrated windows authentication
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableNegotiate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Use SSL 2.0 (Checked) + SSL 3.0 (Checked) + TSL 1.0 (unchecked)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"SecureProtocols"=dword:00000028
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Warn about invalid site certificates
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"WarnonBadCertRecving"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Warn if changing between secure and insecure mode
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"WarnonZoneCrossing"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Usar FTP passivo (para compatibilidade com Firewalls e Modems DSL, e para compatibilidade com servidores FTPs antigos)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Ftp]
+"Use PASV"="yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Show friendly/Full URL
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"Show_FullURL"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Smart image dithering
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"SmartDithering"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable offline items to be synchronized on a schedule
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Webcheck]
+"NoScheduledUpdates"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Check for publisher's certificate revocation
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\WinTrust\Trust Providers\Software Publishing]
+"State"=dword:00023c00
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable profile assistant
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Security\P3Global]
+"Enabled"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Makes the Always ask before opening this type of file check box on the on the Safe Open File dialog box unavailable so that it is always selected.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"AlwaysPromptWhenDownload"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Restrictions]
+"AlwaysPromptWhenDownload"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Dis-allow spying by web-sites
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ProtocolDefaults]
+"about"=dword:00000004
+
+
+;===============================================================================================
+;**************************************** Outlook Express ****************************************
+;===============================================================================================
+
+; Do Not Start MS Messenger with Outlook Express
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Outlook Express]
+"Hide Messenger"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Fixes slowdown problem starting Outlook Express when you delete Windows Messenger, and disable the splash screen
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FB7199AB-79BF-11d2-8D94-0000F875C541}\InProcServer32]
+"ThreadingModel"="Apartment"
+@=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{FB7199AB-79BF-11d2-8D94-0000F875C541}\LocalServer32]
+"ThreadingModel"="Apartment"
+@=""
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Unbundle Windows Messenger from Outlook Express
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Outlook Express]
+"Hide Messenger"=dword:00000002
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Control the Ability to Use HTTP Mail in Outlook Express
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Outlook Express]
+"HTTP Mail Enabled"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Minimize Outlook to the System Tray
+
+[HKEY_Current_User\Software\Microsoft\Office\10.0\Outlook\Preferences]
+"MinToTray"=dword:00000001
+
+;===============================================================================================
+; ************************************* Windows Media Player ************************************
+;===============================================================================================
+
+; Hide "Network" tab on Media Player
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"HideNetworkTab"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Auto Upgrade with Windows Media Player
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"DisableAutoUpdate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Windows Media Player EULA Auto accept (to prevent first-run on XPSP2)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+"GroupPrivacyAcceptance"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable codecs downloads on Windows Media Player.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCodecDownload"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCodecDownload"=dword:00000001
+
+
+;===============================================================================================
+; ***************************************** Media Player  ****************************************
+;===============================================================================================
+
+; Fit Video to Screen on Media Player
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SnapToVideo"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+
+; Do not create Desktop and Quicklaunch shortcuts
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Setup\UserOptions]
+"DesktopShortcut"="no"
+"QuickLaunchShortcut"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Windows Media Player 9 and 10 Setup:
+; Disable First Run and Auto Accept Privacy Statement
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"AcceptedPrivacyStatement"=dword:00000001
+"FirstRun"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable automatic codec downloads
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"UpgradeCodecPrompt"=dword:00000001
+"StartInMediaGuide"=dword:00000000
+"ShowAppTitlebar"=dword:00000000
+"AlwaysOnTop"=dword:00000000
+"DoNotShowAnchor"=dword:00000001
+"EnableScreenSaver"=dword:00000000
+"PromptLicenseBackup"=dword:00000001
+"PlayerScriptCommandsEnabled"=dword:00000000
+"WebScriptCommandsEnabled"=dword:00000000
+"WebStreamsEnabled"=dword:00000001
+"MetadataRetrieval"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Media Player identification (track-back) through Internet sites
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SendUserGUID"=hex:00
+;-----------------------------------------------------------------------------------------------------------------------------
+
+; Do Not Receive Media Player Licences automatically without prompt
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SilentAcquisition"=dword:00000000
+"UsageTracking"=dword:00000000
+"DisableMRU"=dword:00000001
+"SaveDRMMusic"=dword:00000000
+"LibraryHasBeenRun"=dword:00000001
+"FullmodeTaskbar"=dword:00000001
+"UpgradeCheckFrequency"=dword:00000002
+"StretchToFit"=dword:00000001
+"LaunchIndex"=dword:00000003
+"Maximized"="0"
+"ShrinkToFit"=dword:00000000
+"ShowEffects"=dword:00000001
+"ShowFullScreenPlaylist"=dword:00000000
+"NowPlayingQuickHide"=dword:00000000
+"ShowTitles"=dword:00000001
+"ShowCaptions"=dword:00000001
+"TitlebarMouseover"=dword:00000000
+"ForceOnline"=dword:00000000
+"NowPlayingPlaylist"=dword:00000001
+"NowPlayingMetadata"=dword:00000001
+"NowPlayingSettings"=dword:00000000
+"VizAutoSelect"=dword:00000001
+"CurrentDisplayView"="VizView"
+"CurrentDisplayPreset"=dword:00000000
+"CurrentSettingsPreset"=dword:00000000
+"CurrentMetadataPreset"=dword:00000000
+"UserDisplayView"="VizView"
+"UserWMPDisplayView"="VizView"
+"UserWMPSettingsView"="EQView"
+"UserWMPMetadataView"="MediaInfoView"
+"UserDisplayPreset"=dword:00000000
+"UserWMPDisplayPreset"=dword:00000000
+"UserWMPSettingsPreset"=dword:00000000
+"UserWMPMetadataPreset"=dword:00000000
+"UserWMPShowSettings"=dword:00000000
+"UserWMPShowMetadata"=dword:00000000
+"CDRecordMP3"=dword:00000001
+"CDRecordMode"=dword:00000000
+"WMARecordRate"=dword:0000fa00
+"WMARecordQuality"=dword:00000000
+"MP3RecordRate"=dword:0002ee00
+"CDRecordDRM"=dword:00000000
+"AutoCopyCD"=dword:00000000
+"AutoEjectCD"=dword:00000000
+"AutoAddRemovable"=dword:00000000
+"AutoAddMusicToLibrary"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable DVD in Media Player
+; Value: Yes or No
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Player\Settings]
+"EnableDVDUI"="Yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable MP3 Encoding from right-click while browsing (need WMP9 or higher)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Settings\MP3Encoding]
+"HighRate"=dword:0004e200
+;--------------------------------------------------------------------------------------------------------------------------------
+; Remove WMP Right Click Options (Queue-it-up, etc.)
+
+[-HKEY_CLASSES_ROOT\CLSID\{F1B9284F-E9DC-4e68-9D7E-42362A59F0FD}]
+[-HKEY_CLASSES_ROOT\CLSID\{8DD448E6-C188-4aed-AF92-44956194EB1F}]

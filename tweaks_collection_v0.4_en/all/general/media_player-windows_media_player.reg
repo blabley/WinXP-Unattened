@@ -1,0 +1,150 @@
+Windows Registry Editor Version 5.00
+
+;===============================================================================================
+; ******************************* Media Player / Windows Media Player *****************************
+;===============================================================================================
+
+; Hide "Network" tab on Media Player
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"HideNetworkTab"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Auto-Upgrate of Windows Media Player
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"DisableAutoUpdate"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Fit Video to Screen on Media Player
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SnapToVideo"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Change Windows Media Player window title
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"Titlebar"="[Insira o texto aqui]"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Auto Accept Windows Media Player EULA Agreemento (to prevent from appearing when WMP is run for the first time on WinXP SP2)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+"GroupPrivacyAcceptance"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Do not create Desktop and Quicklaunch shortcuts
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Setup\UserOptions]
+"DesktopShortcut"="no"
+"QuickLaunchShortcut"="no"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Windows Media Player 9 and 10 Setup:
+; Disable First Run and Auto Accept Privacy Statement
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"AcceptedPrivacyStatement"=dword:00000001
+"FirstRun"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Media Player automatic codec downloading
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"UpgradeCodecPrompt"=dword:00000001
+"StartInMediaGuide"=dword:00000000
+"ShowAppTitlebar"=dword:00000000
+"AlwaysOnTop"=dword:00000000
+"DoNotShowAnchor"=dword:00000001
+"EnableScreenSaver"=dword:00000000
+"PromptLicenseBackup"=dword:00000001
+"PlayerScriptCommandsEnabled"=dword:00000000
+"WebScriptCommandsEnabled"=dword:00000000
+"WebStreamsEnabled"=dword:00000001
+"MetadataRetrieval"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable Media Player identification track-back throgh internet sites
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SendUserGUID"=hex:00
+;-----------------------------------------------------------------------------------------------------------------------------
+
+; Don´t receive Media Player licenses without asking.
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SilentAcquisition"=dword:00000000
+"UsageTracking"=dword:00000000
+"DisableMRU"=dword:00000001
+"SaveDRMMusic"=dword:00000000
+"LibraryHasBeenRun"=dword:00000001
+"FullmodeTaskbar"=dword:00000001
+"UpgradeCheckFrequency"=dword:00000002
+"StretchToFit"=dword:00000001
+"LaunchIndex"=dword:00000003
+"Maximized"="0"
+"ShrinkToFit"=dword:00000000
+"ShowEffects"=dword:00000001
+"ShowFullScreenPlaylist"=dword:00000000
+"NowPlayingQuickHide"=dword:00000000
+"ShowTitles"=dword:00000001
+"ShowCaptions"=dword:00000001
+"TitlebarMouseover"=dword:00000000
+"ForceOnline"=dword:00000000
+"NowPlayingPlaylist"=dword:00000001
+"NowPlayingMetadata"=dword:00000001
+"NowPlayingSettings"=dword:00000000
+"VizAutoSelect"=dword:00000001
+"CurrentDisplayView"="VizView"
+"CurrentDisplayPreset"=dword:00000000
+"CurrentSettingsPreset"=dword:00000000
+"CurrentMetadataPreset"=dword:00000000
+"UserDisplayView"="VizView"
+"UserWMPDisplayView"="VizView"
+"UserWMPSettingsView"="EQView"
+"UserWMPMetadataView"="MediaInfoView"
+"UserDisplayPreset"=dword:00000000
+"UserWMPDisplayPreset"=dword:00000000
+"UserWMPSettingsPreset"=dword:00000000
+"UserWMPMetadataPreset"=dword:00000000
+"UserWMPShowSettings"=dword:00000000
+"UserWMPShowMetadata"=dword:00000000
+"CDRecordMP3"=dword:00000001
+"CDRecordMode"=dword:00000000
+"WMARecordRate"=dword:0000fa00
+"WMARecordQuality"=dword:00000000
+"MP3RecordRate"=dword:0002ee00
+"CDRecordDRM"=dword:00000000
+"AutoCopyCD"=dword:00000000
+"AutoEjectCD"=dword:00000000
+"AutoAddRemovable"=dword:00000000
+"AutoAddMusicToLibrary"=dword:00000000
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Disable codecs downloads on Windows Media Player.
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCodecDownload"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\WindowsMediaPlayer]
+"PreventCodecDownload"=dword:00000001
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable DVD on Media Player
+; Values: Yes or No
+
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Player\Settings]
+"EnableDVDUI"="Yes"
+;--------------------------------------------------------------------------------------------------------------------------------
+
+; Enable MP3 encoding with right button while surfing (needs Windows Media Player 9 ou higher)
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Settings\MP3Encoding]
+"HighRate"=dword:0004e200
+;--------------------------------------------------------------------------------------------------------------------------------
+; Removes Windows Media Player right click shell options(Queue it up, etc...)
+
+[-HKEY_CLASSES_ROOT\CLSID\{F1B9284F-E9DC-4e68-9D7E-42362A59F0FD}]
+
+[-HKEY_CLASSES_ROOT\CLSID\{8DD448E6-C188-4aed-AF92-44956194EB1F}]
