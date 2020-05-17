@@ -1,0 +1,54 @@
+;SetupMgrTag
+[Unattended]
+    OemSkipEula=Yes
+    InstallFilesPath=C:\sysprep\i386
+    DriverSigningPolicy=Ignore
+    TargetPath=\WINDOWS
+    UpdateUPHAL=ACPIAPIC_UP,%WINDIR%\inf\hal.inf
+
+[GuiUnattended]
+    AdminPassword="admin2O1O"
+    EncryptedAdminPassword=NO
+    OEMSkipRegional=1
+    TimeZone=110
+    OemSkipWelcome=1
+    OEMDuplicatorstring=20051214
+
+[UserData]
+    FullName="Users"
+    OrgName="LLP"
+    ProductKey=K6GQ3-74J6D-X3K48-RWWBJ-Q7K9B
+
+[Display]
+    BitsPerPel=32
+    Xresolution=1024
+    YResolution=768
+    Vrefresh=75
+
+[TapiLocation]
+    Dialing=Tone
+    AreaCode=040
+    CountryCode=49
+    LongDistanceAccess="0"
+
+[RegionalSettings]
+    LanguageGroup=1
+    SystemLocale=00000407
+    UserLocale=00000407
+    InputLocale=0407:00000407
+
+[Identification]
+    JoinDomain=local.biz
+    DomainAdmin=administrator
+    DomainAdminPassword=Pa55word
+
+[Networking]
+    InstallDefaultComponents=Yes
+
+[Branding]
+    BrandIEUsingUnattended=Yes
+
+[Proxy]
+    Proxy_Enable=0
+    Use_Same_Proxy=0
+

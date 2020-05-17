@@ -1,0 +1,48 @@
+;This is a sysprep.inf that will load 3 SCSI mass storage device drivers that ship with Windows 2000,
+;3 IDE mass storage device drivers that ship with Windows 2000, and one 3rd party mass storage device driver.
+;
+[unattended]
+
+[guiunattended]
+timezone=004
+adminpassword=*
+
+[userdata]
+fullname="User Name"
+Orgname="Company Name"
+computername="*"
+productid=xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+
+[networking]
+
+[identification]
+joinworkgroup=workgroup
+
+[sysprepmassstorage]
+;usage format for mass storage device drivers that ship with Windows 2000
+;<pnpid>=<path to inf>
+
+;to install Adaptec AHA-154X/AHA-164X SCSI Host Adapter:
+*ADP1540=%systemroot%\inf\scsi.inf
+
+;to install Adaptec AHA-154X Plug and Play SCSI Host Adapter:
+*ADP1542=%systemroot%\inf\scsi.inf
+
+;to install Adaptec AHA-154X Plug and Play SCSI Host Adapter:
+*ADP4215=%systemroot%\inf\scsi.inf
+
+;to install PCMCIA IDE/ATAPI Controller:
+PCMCIA\*PNP0600=%systemroot%\inf\mshdc.inf
+
+;to install Panasonic ATAPI CD-ROM Interface Card:
+PCMCIA\KME-KXLC005-A99E=%systemroot%\inf\mshdc.inf
+
+;to install ATAPI CD-ROM Interface Card:
+PCMCIA\_-NinjaATA--3768=%systemroot%\inf\mshdc.inf
+
+
+;usage format for 3rd party mass storage device drivers
+;<pnpid>=<path to inf>,<disk directory>,<disk discription>,<disk tag>
+
+;to install 3rd Party SCSI Controller:
+PCI\VEN_111&DEV_1010=%systemdrive%\pnpdrvrs\storage\3rdprty.inf,\3rd,"3rd Party SCSI Driver",\3rdprty_io

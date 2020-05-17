@@ -1,0 +1,116 @@
+[mshdc.inf] Manufacturer: (Standard IDE ATA/ATAPI controllers)
+
+  PCMCIA IDE/ATAPI Controller:
+    PCMCIA\*PNP0600
+  Panasonic ATAPI CD-ROM Interface Card:
+    PCMCIA\KME-KXLC005-A99E
+  ATAPI CD-ROM Interface Card:
+    PCMCIA\_-NinjaATA--3768
+  Fujitsu IDE PC-Card:
+    PCMCIA\FUJITSU-IDE-PC_CARD-DDF2
+  Primary IDE Channel:
+    Primary_IDE_Channel
+  Secondary IDE Channel:
+    Secondary_IDE_Channel
+  Standard IDE/ESDI Hard Disk Controller:
+    *PNP0600
+  Standard IDE/ESDI Hard Disk Controller:
+    *AZT0502
+  Standard Dual Channel PCI IDE Controller:
+    PCI\CC_0101
+
+  9 devices listed
+
+[mshdc.inf] Manufacturer: Acer Labs Inc
+
+  ALi PCI IDE Controller:
+    PCI\VEN_10B9&DEV_5215
+  ALi M5219 PCI Bus Master IDE Controller:
+    PCI\VEN_10B9&DEV_5219
+  ALi M5229 PCI Bus Master IDE Controller:
+    PCI\VEN_10B9&DEV_5229
+
+  3 devices listed
+
+[mshdc.inf] Manufacturer: Appian Technology
+
+  Appian PCI IDE Controller:
+    PCI\VEN_1097&DEV_0038
+
+  1 device listed
+
+[mshdc.inf] Manufacturer: CMD Technology
+
+  CMD PCI-0640 PCI to IDE Controller:
+    PCI\VEN_1095&DEV_0640
+  CMD PCI-0646 Bus Master PCI to IDE Controller:
+    PCI\VEN_1095&DEV_0646
+
+  2 devices listed
+
+[mshdc.inf] Manufacturer: Compaq
+
+  Compaq PCI IDE Controller:
+    PCI\VEN_0E11&DEV_AE33
+
+  1 device listed
+
+[mshdc.inf] Manufacturer: Intel
+
+  Intel(r) 82092AA PCI IDE Controller:
+    PCI\VEN_8086&DEV_1222
+  Intel(r) 82371FB PCI Bus Master IDE Controller:
+    PCI\VEN_8086&DEV_1230
+  Intel(r) 82371SB PCI Bus Master IDE Controller:
+    PCI\VEN_8086&DEV_7010
+  Intel(r) 82371AB/EB PCI Bus Master IDE Controller:
+    PCI\VEN_8086&DEV_7111
+  Intel(r) 82801AA Bus Master IDE Controller:
+    PCI\VEN_8086&DEV_2411
+  Intel(r) 82801AB Bus Master IDE Controller:
+    PCI\VEN_8086&DEV_2421
+  Intel(r) 82440MX Bus Master IDE Controller:
+    PCI\VEN_8086&DEV_7199
+
+  7 devices listed
+
+[mshdc.inf] Manufacturer: PC Technology
+
+  PC Tech PCI IDE Single or Dual Port Controller:
+    PCI\VEN_1042&DEV_1000
+
+  1 device listed
+
+[mshdc.inf] Manufacturer: Silicon Integrated System
+
+  SiS PCI IDE Controller:
+    PCI\VEN_1039&DEV_0601
+  SiS PCI IDE Controller:
+    PCI\VEN_1039&DEV_5513
+
+  2 devices listed
+
+[mshdc.inf] Manufacturer: Symphony Labs
+
+  Symphony PCI IDE Controller:
+    PCI\VEN_10AD&DEV_0001
+  Symphony PCI IDE Controller:
+    PCI\VEN_10AD&DEV_0150
+
+  2 devices listed
+
+[mshdc.inf] Manufacturer: Promise Technology
+
+  Promise Technology PCI IDE Controller:
+    PCI\VEN_105A&DEV_4D33
+
+  1 device listed
+
+[mshdc.inf] Manufacturer: VIA Technologies, Inc.
+
+  VIA Bus Master IDE Controller:
+    PCI\VEN_1106&DEV_0571
+
+  1 device listed
+
+0 files processed.

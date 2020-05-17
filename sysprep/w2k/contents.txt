@@ -1,0 +1,138 @@
+**********************************************************************
+                    The Microsoft Windows 2000 
+                      Sysprep Update Package                           
+                          December 1999
+**********************************************************************
+
+Information in this document, including URL and other Internet Web
+site references, is subject to change without notice. Unless otherwise
+noted, the example companies, organizations, products, people, and
+events depicted herein are fictitious and no association with any real
+company, organization, product, person, or event is intended or should
+be inferred. Complying with all applicable copyright laws is the
+responsibility of the user. Without limiting the rights under
+copyright, no part of this document may be reproduced, stored in or
+introduced into a retrieval system, or transmitted in any form or by
+any means (electronic, mechanical, photocopying, recording, or
+otherwise), or for any purpose, without the express written permission
+of Microsoft Corporation.
+
+Microsoft may have patents, patent applications, trademarks,
+copyrights, or other intellectual property rights covering subject
+matter in this document. Except as expressly provided in any written
+license agreement from Microsoft, the furnishing of this document does
+not give you any license to these patents, trademarks, copyrights, or
+other intellectual property.
+
+(c) 1999 Microsoft Corporation. All rights reserved. 
+
+Microsoft products are licensed to OEMs by Microsoft Licensing Inc.,
+a wholly owned subsidiary of Microsoft Corporation.
+
+Microsoft, MS-DOS, Windows, and Windows NT are either registered
+trademarks or trademarks of Microsoft Corporation in the United States
+and/or other countries/regions.
+
+The names of actual companies and products mentioned herein may be the
+trademarks of their respective owners.
+
+======================================================================
+How to Use This Document
+======================================================================
+
+To view this document in Notepad, maximize the Notepad window. For
+best viewing, on the Edit menu, click Word Wrap.
+
+To print this document, open it in Notepad or another word processor,
+and then on the File menu, click Print. For best printing results, 
+set font size to 9 point.
+
+======================================================================
+Contents
+======================================================================
+
+1.0 INTRODUCTION 
+2.0 DOCUMENTATION 
+3.0 SAMPLES 
+4.0 TOOLS 
+
+----------------------------------------------------------------------
+1.0 Introduction
+----------------------------------------------------------------------
+
+Welcome to The Microsoft Windows 2000 Sysprep Update Package. This
+document contains important information about the structure and format
+of the Windows 2000 Sysprep package, as well as uses for the items
+provided.
+
+----------------------------------------------------------------------
+2.0 Documentation
+----------------------------------------------------------------------
+
+This section outlines the names and locations of the documentation
+provided on the Windows 2000 Sysprep Update package, so you can find
+what you need fast. Documentation can be found in \Docs in the Sysprep
+Update package. Specific document titles and corresponding file names
+are listed in the following table.
+
+Document Title                            File Name
+====================================================================== 
+Microsoft Windows 2000 Sysprep Update     NewSysprep.doc
+ 
+Microsoft Windows 2000 Guide to           Readme.txt 
+Unattended Setup Release Notes
+   
+Microsoft Windows 2000 Guide to           Unattend.doc
+Unattended Setup Parameters
+  
+List of PnP IDs, manufacturers, and       IDE:\Docs\Idepnpids.txt 
+model information for mass storage        SCSI:\Docs\Scsipnpids.txt
+controller drivers that ship with              
+Windows 2000                            
+
+----------------------------------------------------------------------
+3.0 Samples
+----------------------------------------------------------------------
+
+Sample answer files are provided in \Samples of the Sysprep Update
+package.
+
+Microsoft provides no warranty, either express or implied, on the
+functionality of these samples. These are provided as example answer
+files only. Should you choose to use these examples, please edit the
+list of PnP IDs to correspond to the PnP IDs in use in your
+environment to ensure optimal results.
+
+ Note: Using the samples as provided will cause longer boot times than
+should be required in a production situation since your environment
+should require only a subset of the PnP IDs listed. For more
+information about PnP ID lists, see Microsoft Windows 2000 Sysprep
+Update (NewSysprep.doc) in \Docs.
+
+----------------------------------------------------------------------
+4.0 Tools
+----------------------------------------------------------------------
+
+A variety of tools are provided in \Tools of the Sysprep Update
+package, including:
+
+   * Sysprep.exe (v1.1)
+
+   * Setupcl.exe
+
+   * Pnpids.exe
+
+The Pnpids.exe tools are provided to help you identify the PnP IDs
+that are available in the mass storage controller .inf files as well
+as the common names for the devices the PnP IDs support. For optimal
+results when running this tool:
+
+
+   1. From a command prompt, change to \Tools containing the
+      Pnpids.exe utility. 
+   2. Type: pnpids.exe <path to Windows 2000 mass storage controller
+      .inf files> | more    
+
+      For example: 
+      Pnpids.exe %windir%\inf | more
+

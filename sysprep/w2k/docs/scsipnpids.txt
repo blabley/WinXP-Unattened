@@ -1,0 +1,434 @@
+[scsi.inf] Manufacturer: Adaptec
+
+  Adaptec AHA-154X/AHA-164X SCSI Host Adapter:
+    *ADP1540
+  Adaptec AHA-154X Plug and Play SCSI Host Adapter:
+    *ADP1542
+  Adaptec AHA-154X Plug and Play SCSI Host Adapter:
+    *ADP4215
+  Adaptec AHA-154X/AHA-164X SCSI Host Adapter (non-pnp):
+    DETECTEDIsa\aha154x
+  Adaptec AHA-151X/AHA-152X or AIC-6260/AIC-6360 SCSI Host Adapter:
+    SPARROW_SCSI
+  Adaptec AHA-151X/AHA-152X or AIC-6260/AIC-6360 SCSI Host Adapter (non-pnp):
+    DETECTED\sparrow
+  Adaptec AHA-1502 SCSI Host Adapter:
+    *ADP1502
+  Adaptec AHA-1505 SCSI Host Adapter:
+    *ADP1505
+  Adaptec AHA-1510 SCSI Host Adapter:
+    *ADP1510
+  Adaptec AHA-1512 SCSI Host Adapter:
+    *ADP1512
+  Adaptec AVA-1515 SCSI Host Adapter:
+    *ADP1515
+  Adaptec AHA-152X SCSI Host Adapter:
+    *ADP1520
+  Adaptec AHA-152X SCSI Host Adapter:
+    *ADP1522
+  Adaptec AHA-1530 SCSI Host Adapter:
+    *ADP3015
+  Adaptec AHA-1532 SCSI Host Adapter:
+    *ADP3215
+  Adaptec AIC-6X60 ISA Single-Chip SCSI Controller:
+    *ADP6360
+  Adaptec AIC-6X70 SCSI Controller:
+    *ADP6370
+  Adaptec SlimSCSI 16-Bit PCMCIA SCSI Host Adapter:
+    PCMCIA\Adaptec__Inc.-APA-1460_SCSI_Host_Adapter-BE89
+  Adaptec SlimSCSI 16-Bit PCMCIA SCSI Host Adapter:
+    PCMCIA\Adaptec__Inc.-APA-1460_SCSI_Host_Adapter-B67E
+  Adaptec SlimSCSI 16-Bit PCMCIA SCSI Host Adapter:
+    PCMCIA\Adaptec__Inc.-APA-1460_SCSI_Host_Adapter-6F71
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5075
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5175
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5275
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5375
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5475
+  Adaptec AVA-2930 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5575
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5675
+  Adaptec AIC-7550 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5775
+  Adaptec AIC-7850 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5078
+  Adaptec AIC-7850 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5178
+  Adaptec AIC-7850 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5278
+  Adaptec AIC-7850 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5378
+  Adaptec AIC-7850 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5478
+  Adaptec AIC-7855 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5578
+  Adaptec AIC-7856 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5678
+  Adaptec AIC-7850 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_5778
+  Adaptec AIC-7860 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7860
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6078
+  Adaptec AHA-2940AU PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6178
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6278
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6378
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6478
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6578
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6678
+  Adaptec AIC-786X PCI SCSI Controller:
+    PCI\VEN_9004&DEV_6778
+  Adaptec AIC-7870 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7078
+  Adaptec AHA-294X/AIC-78XX PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7178
+  SCSI Channel on Adaptec AHA-3940/3940W PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7278
+  Adaptec AHA-2944W PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7478
+  SCSI Channel on Adaptec AHA-3944 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7578
+  Adaptec AIC-7870 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7678
+  Adaptec AIC-7870 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7778
+  Adaptec AIC-7880 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8078
+  Adaptec AHA-2940U/AHA-2940UW PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8178
+  SCSI Channel on Adaptec AHA-3940U/3940UW PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8278
+  Adaptec AHA-2944UW PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8478
+  SCSI Channel on Adaptec AHA-3944U PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8578
+  Adaptec AIC-7880 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8678
+  Adaptec AIC-788x / AHA-2940UW Pro PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8778
+  Adaptec AHA-2930UW PCI SCSI Controller:
+    PCI\VEN_9004&DEV_8878
+  Adaptec AIC-789x PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7891
+  Adaptec AIC-789x PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7892
+  Adaptec AHA-2940U/UW Dual/AHA-394xAU/AUW/AUWD PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7895
+  Adaptec AIC-789x PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7896
+  Adaptec AIC-789x PCI SCSI Controller:
+    PCI\VEN_9004&DEV_7897
+  Adaptec AHA-4944 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_3B78
+  Adaptec AHA-4944 PCI SCSI Controller:
+    PCI\VEN_9004&DEV_EC78
+  Adaptec APA-1480 CardBus SCSI Controller:
+    PCI\VEN_9004&DEV_6075
+  Adaptec APA-1480 CardBus SCSI Controller:
+    PCI\VEN_9004&DEV_6075&SUBSYS_75609004
+  Adaptec AHA-2930CU PCI SCSI Controller:
+    PCI\VEN_9004&DEV_3860
+  Adaptec AHA-2940U2/U2W PCI SCSI Controller:
+    PCI\VEN_9005&DEV_0010
+  Adaptec AIC-7890 PCI SCSI Controller:
+    PCI\VEN_9005&DEV_0020
+  Adaptec AIC-7890 PCI SCSI Controller:
+    PCI\VEN_9005&DEV_0030
+  Adaptec AHA-2940U2/U2W PCI SCSI Controller:
+    PCI\VEN_9005&DEV_001F
+  Adaptec AIC-7890 PCI SCSI Controller:
+    PCI\VEN_9005&DEV_002F
+  Adaptec AIC-7890 PCI SCSI Controller:
+    PCI\VEN_9005&DEV_003F
+  Adaptec AHA-3940U2x/AHA-395U2x PCI Ultra2 SCSI Controller:
+    PCI\VEN_9005&DEV_0050
+  Adaptec AHA-3950U2D PCI Ultra2 SCSI Controller:
+    PCI\VEN_9005&DEV_0051
+  Adaptec AIC-7896/AIC-7897 PCI Ultra2 SCSI Controller:
+    PCI\VEN_9005&DEV_005F
+  Adaptec AHA-2920 SCSI Host Adapter:
+    *FDC0000
+  Adaptec AHA-2920 SCSI Host Adapter (non-pnp):
+    DETECTEDPci\Fd16_700
+  Adaptec AIC-7899 Ultra160/m PCI SCSI Card:
+    PCI\VEN_9005&DEV_00CF
+  Adaptec 3960D Ultra160/m PCI SCSI Card:
+    PCI\VEN_9005&DEV_00C0
+  Adaptec AIC-7892 Ultra160/m PCI SCSI Card:
+    PCI\VEN_9005&DEV_008F
+  Adaptec AIC-7892 Ultra160/m PCI SCSI Card:
+    PCI\VEN_9005&DEV_0080
+
+  85 devices listed
+
+[scsi.inf] Manufacturer: Advansys
+
+  Advansys 3550 Ultra Wide SCSI Host Adapter:
+    PCI\VEN_10CD&DEV_2300
+  Advansys SCSI Host Adapter:
+    PCI\VEN_10CD&DEV_1100
+  Advansys SCSI Host Adapter:
+    PCI\VEN_10CD&DEV_1200
+  Advansys SCSI Host Adapter:
+    PCI\VEN_10CD&DEV_1300
+  Advansys ABP460 PCMCIA SCSI Host Adapter:
+    PCMCIA\AdvanSys_-PCMCIA_Ultra_SCSI_ABP460-25c7
+  Advansys ABP480 CardBus SCSI Host Adapter:
+    PCI\VEN_10CD&DEV_1300&SUBSYS_133010CD
+
+  6 devices listed
+
+[scsi.inf] Manufacturer: Advanced Micro Devices (AMD)
+
+  AMD PCI SCSI Controller/Ethernet Adapter:
+    PCI\VEN_1022&DEV_2020
+
+  1 device listed
+
+[scsi.inf] Manufacturer: AMI
+
+  AMI MegaRaid 438 RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_0438101E
+  AMI MegaRaid 438 RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_11121111
+  AMI MegaRaid 438 RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_10C6103C
+  AMI MegaRaid 466 RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_0466101E
+  AMI MegaRaid 466 RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_11111111
+  AMI MegaRaid T5 RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_10C7103C
+  AMI MegaRaid 428 RAID Controller:
+    PCI\VEN_101E&DEV_9060
+  AMI MegaRaid RAID Controller:
+    PCI\VEN_101E&DEV_9010
+  AMI MegaRaid RAID Controller:
+    PCI\VEN_8086&DEV_1960&SUBSYS_03A2113C
+
+  9 devices listed
+
+[scsi.inf] Manufacturer: BusLogic
+
+  BusLogic SCSI Host Adapter:
+    BUSLOGIC_SCSI
+  BusLogic SCSI Host Adapter (non-pnp):
+    DETECTED\buslogic
+  BusLogic MultiMaster SCSI Host Adapter:
+    *BUS0042
+  BusLogic MultiMaster EISA SCSI Host Adapter:
+    MF\EISA_BUS4201_DEV0
+  BusLogic MultiMaster PCI SCSI Host Adapter:
+    PCI\VEN_104B&DEV_1040
+  BusLogic FlashPoint PCI SCSI Host Adapter:
+    FLASHPNT_SCSI
+  BusLogic FlashPoint PCI SCSI Host Adapter:
+    PCI\VEN_104B&DEV_8130
+
+  7 devices listed
+
+[scsi.inf] Manufacturer: Compaq
+
+  Compaq Drive Array:
+    CPQARRAY_SCSI
+  Compaq Drive Array:
+    PCI\VEN_0E11&DEV_AE10
+  Compaq Integrated 32-Bit Fast-SCSI-2 Controller:
+    *CPQ4410
+  Compaq EISA 32-Bit Fast-SCSI-2 Controller:
+    *CPQ4411
+  Compaq 32-Bit Fast-Wide SCSI-2/E Controller:
+    CPQFWS2E_SCSI
+  Compaq Fibre-Channel Host Controller:
+    PCI\VEN_0E11&DEV_A0EC
+  Compaq Fibre-Channel Host Controller:
+    CPQFCALM_SCSI
+  Compaq SCSI Tape Adapter:
+    *CPQFD17
+  Compaq Drive Array (non-pnp):
+    DETECTED\cpqarray
+  Compaq Fibre-Channel Host Controller (non-pnp):
+    DETECTED\cpqfcalm
+  %detected_cpqfws2e.DeviceDesc%:
+    DETECTED\cpqfws2e
+
+  11 devices listed
+
+[scsi.inf] Manufacturer: %DELL%
+
+  (no devices)
+
+[scsi.inf] Manufacturer: Diamond
+
+  Diamond Multimedia Systems SCSI Host Adapter:
+    PCI\VEN_1000&DEV_008F
+
+  1 device listed
+
+[scsi.inf] Manufacturer: Emulex
+
+  Emulex LP6000 Fibre Channel Host Adapter:
+    PCI\VEN_10DF&DEV_1AE5
+  Emulex LP7000 Fibre Channel Host Adapter:
+    PCI\VEN_10DF&DEV_f700
+  Emulex LP8000 Fibre Channel Host Adapter:
+    PCI\VEN_10DF&DEV_f800
+
+  3 devices listed
+
+[scsi.inf] Manufacturer: Future Domain Corporation
+
+  Adaptec AHA-2920 or Future Domain 16XX/PCI/SCSI2Go SCSI Host Adapter:
+    FD16_700_SCSI
+  Future Domain TMC-1650/1660/1670/1680 SCSI Host Adapter:
+    *FDC0000
+  Future Domain MCS-600/700 SCSI Host Adapter:
+    *FDC0000
+  Future Domain SCSI2Go PCMCIA SCSI Host Adapter:
+    PCMCIA\Future_Domain_Corporation-SCSI_PCMCIA_Credit_Card_Controller-1BF8
+  Future Domain PCI SCSI HOST Adapter:
+    PCI\VEN_1036&DEV_0000
+  Adaptec AHA-2920 or Future Domain 16XX/PCI/SCSI2Go SCSI Host Adapter:
+    DETECTED\fd16_700
+
+  6 devices listed
+
+[scsi.inf] Manufacturer: Unknown Manufacturer
+
+  SCSI/RAID Host Controller:
+    GEN_SCSIADAPTER
+
+  1 device listed
+
+[scsi.inf] Manufacturer: HP
+
+  HP NetRAID-3Si:
+    PCI\VEN_8086&DEV_1960&SUBSYS_10C6103C
+  Integrated HP NetRAID:
+    PCI\VEN_8086&DEV_1960&SUBSYS_10C7103C
+  Integrated HP NetRAID:
+    PCI\VEN_8086&DEV_1960&SUBSYS_10CC103C
+  HP NetRAID-1Si:
+    PCI\VEN_8086&DEV_1960&SUBSYS_10CD103C
+
+  4 devices listed
+
+[scsi.inf] Manufacturer: IBM Corporation
+
+  IBM ServeRAID Adapter:
+    PCI\VEN_1014&DEV_002E
+  IBM Portable PCMCIA CD-ROM Drive:
+    PCMCIA\IBM-PCMCIA_Portable_CD-ROM_Drive-84E3
+  IBM Portable PCMCIA CD-ROM Drive:
+    PCMCIA\IBM-PCMCIA_CD-ROM_DRIVE_CD-400-5AFA
+  IBM Portable PCMCIA CD-ROM Drive:
+    PCMCIA\IBM-PCMCIA_Portable_CD-ROM_Drive-84E2
+
+  4 devices listed
+
+[scsi.inf] Manufacturer: Initio
+
+  Initio Ultra SCSI Host Adapter:
+    PCI\VEN_1101&DEV_9500
+  Initio Ultra SCSI Host Adapter:
+    PCI\VEN_1101&DEV_9400
+  Initio Ultra SCSI Host Adapter:
+    PCI\VEN_1101&DEV_9401
+  Initio Ultra SCSI Host Adapter:
+    PCI\VEN_1101&DEV_134A
+  Initio Ultra SCSI Host Adapter:
+    PCI\VEN_1101&DEV_0002
+
+  5 devices listed
+
+[scsi.inf] Manufacturer: JNI
+
+  JNI 1160 PCI Fibre Channel Adapter:
+    PCI\VEN_9004&DEV_1160
+
+  1 device listed
+
+[scsi.inf] Manufacturer: Mylex
+
+  Mylex DAC960P Disk Array Controller:
+    PCI\VEN_1069&DEV_0001
+  Mylex DAC960PD Disk Array Controller:
+    PCI\VEN_1069&DEV_0002
+  Mylex DAC960 Series Disk Array Controller:
+    PCI\VEN_1069&DEV_0010
+  Mylex DAC1164P Disk Array Controller:
+    PCI\VEN_1011&DEV_1065&SUBSYS_00201069
+  Mylex eXtremeRAID Support Device:
+    PCI\VEN_1069&DEV_BA55
+  Mylex DAC960 Disk Array Controller (non-pnp):
+    DETECTED\dac960nt
+
+  6 devices listed
+
+[scsi.inf] Manufacturer: NCR
+
+  NCR 53C710 SCSI Host Adapter :
+    NCRC710_SCSI
+  NCR 710 SCSI Host Adapter (non-pnp):
+    DETECTED\ncrc710
+
+  2 devices listed
+
+[scsi.inf] Manufacturer: QLogic
+
+  QLogic PCI SCSI Host Adapter:
+    PCI\VEN_1077&DEV_1020
+  QLogic QLA2100, 64 bit PCI-Fibre Channel Adapter:
+    PCI\VEN_1077&DEV_2100&SUBSYS_00011077
+  QLogic PCI SCSI Host Adapter.:
+    PCI\VEN_1077&DEV_1240
+  QLogic PCI-QLA1080, 64 bit PCI LVD SCSI HBA:
+    PCI\VEN_1077&DEV_1080
+
+  4 devices listed
+
+[scsi.inf] Manufacturer: Symbios Logic
+
+  Symbios Logic 8100S PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_0001
+  Symbios Logic 820 PCI SCSI Host Adapter:
+    PCI\VEN_1000&DEV_0002
+  Symbios Logic 825XS|D PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_0003
+  Symbios Logic 815X PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_0004
+  Symbios Logic 8100ASP, 2081X PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_0005
+  Symbios Logic 8600SP PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_0006
+  Symbios Logic 896, 22910 PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_000B
+  Symbios Logic 8951U PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_000C
+  Symbios Logic 23800 PCI SCSI-Ethernet Adapter:
+    PCI\VEN_1000&DEV_000D
+  Symbios Logic 875XS|D, 2280X PCI SCSI Adapter:
+    PCI\VEN_1000&DEV_000F
+
+  10 devices listed
+
+[scsi.inf] Manufacturer: PROMISE
+
+  Promise Technology Inc. Ultra66 IDE Controller:
+    PCI\VEN_105A&DEV_4D38
+
+  1 device listed
+
+0 files processed.
